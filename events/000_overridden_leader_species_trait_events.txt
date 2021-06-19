@@ -1,0 +1,99 @@
+namespace = distar
+namespace = utopia
+
+# majority commented out because overrides were unnecessary - the new events clean up any weirdness
+
+# # override default erudite on_modification_complete event
+# country_event = {
+# 	id = utopia.2508
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default erudite on_leader_spawned event
+# country_event = {
+# 	id = utopia.2509
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_leader_spawned cyborg event
+# country_event = {
+# 	id = utopia.2510
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_ruler_back_to_pre_ruler_class cyborg event
+# country_event = {
+# 	id = utopia.2511
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_leader_spawned synthetic event
+# country_event = {
+# 	id = utopia.2560
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_ruler_back_to_pre_ruler_class synthetic event
+# country_event = {
+# 	id = utopia.2561
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_leader_spawned latent psionic event
+# country_event = {
+# 	id = utopia.2601
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_leader_spawned psionic event
+# country_event = {
+# 	id = utopia.2651
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_ruler_back_to_pre_ruler_class psionic event
+# country_event = {
+# 	id = utopia.2653
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# # override the default on_leader_spawned brainslug event
+# country_event = {
+# 	id = distar.173
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	immediate = { }
+# }
+
+# override the default brainslug event for leader pool (triggered explicitly a couple spots in the Distant Stars events file)
+country_event = {
+	id = distar.174
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		every_pool_leader = {
+			random_list = {
+				80 = { }
+				20 = { add_leader_trait_brainslug = yes }
+			}
+		}
+	}
+}

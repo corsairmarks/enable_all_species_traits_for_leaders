@@ -1,0 +1,470 @@
+
+add_leader_trait_brainslug = {
+	if = {
+		limit = { species = { has_trait = trait_brainslug } }
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_brainslug }
+			}
+			add_trait = leader_trait_admiral_brainslug
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_brainslug }
+			}
+			add_trait = leader_trait_general_brainslug
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_brainslug }
+			}
+			add_trait = leader_trait_governor_brainslug
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_brainslug }
+			}
+			add_trait = leader_trait_scientist_brainslug
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_brainslug }
+			}
+			add_trait = leader_trait_ruler_brainslug
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
+			add_ruler_trait = leader_trait_ruler_brainslug
+		}
+	}
+}
+
+add_leader_trait_cyborg = {
+	if = {
+		limit = { species = { has_trait = trait_cybernetic } }
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_cyborg }
+			}
+			add_trait = leader_trait_admiral_cyborg
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_cyborg }
+			}
+			add_trait = leader_trait_general_cyborg
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_cyborg }
+			}
+			add_trait = leader_trait_governor_cyborg
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_cyborg }
+			}
+			add_trait = leader_trait_scientist_cyborg
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_cyborg }
+			}
+			add_trait = leader_trait_ruler_cyborg
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_cyborg } }
+			add_ruler_trait = leader_trait_ruler_cyborg
+		}
+	}
+}
+
+add_leader_trait_erudite = {
+	if = {
+		limit = { species = { has_trait = trait_erudite } }
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_erudite }
+			}
+			add_trait = leader_trait_admiral_erudite
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_erudite }
+			}
+			add_trait = leader_trait_general_erudite
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_erudite }
+			}
+			add_trait = leader_trait_governor_erudite
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_erudite }
+			}
+			add_trait = leader_trait_scientist_erudite
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_erudite }
+			}
+			add_trait = leader_trait_ruler_erudite
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_erudite } }
+			add_ruler_trait = leader_trait_ruler_erudite
+		}
+	}
+}
+
+add_leader_trait_latent_psionic = {
+	if = {
+		limit = {
+			species = {
+				has_trait = trait_latent_psionic
+				NOT = { has_trait = trait_psionic }
+			}
+		}
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_psionic }
+			}
+			add_trait = leader_trait_admiral_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_psionic }
+			}
+			add_trait = leader_trait_general_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_psionic }
+			}
+			add_trait = leader_trait_governor_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_psionic }
+			}
+			add_trait = leader_trait_scientist_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_psionic }
+			}
+			add_trait = leader_trait_ruler_psionic
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
+			add_ruler_trait = leader_trait_ruler_psionic
+		}
+	}
+}
+
+add_leader_trait_psionic = {
+	if = {
+		limit = {
+			species = {
+				NOT = { has_trait = trait_latent_psionic }
+				has_trait = trait_psionic
+			}
+		}
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_psionic }
+			}
+			add_trait = leader_trait_admiral_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_psionic }
+			}
+			add_trait = leader_trait_general_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_psionic }
+			}
+			add_trait = leader_trait_governor_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_psionic }
+			}
+			add_trait = leader_trait_scientist_psionic
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_psionic }
+			}
+			add_trait = leader_trait_ruler_psionic
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
+			add_ruler_trait = leader_trait_ruler_psionic
+		}
+	}
+}
+
+add_leader_trait_synthetic = {
+	if = {
+		limit = { species = { has_trait = trait_mechanical } }
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_synthetic }
+			}
+			add_trait = leader_trait_admiral_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_synthetic }
+			}
+			add_trait = leader_trait_general_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_synthetic }
+			}
+			add_trait = leader_trait_governor_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_synthetic }
+			}
+			add_trait = leader_trait_scientist_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_synthetic }
+			}
+			add_trait = leader_trait_ruler_synthetic
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_synthetic } }
+			add_ruler_trait = leader_trait_ruler_synthetic
+		}
+	}
+}
+
+remove_leader_trait_brainslug = {
+	if = {
+		limit = { species = { NOT = { has_trait = trait_brainslug } } }
+		if = {
+			limit = { has_trait = leader_trait_admiral_brainslug }
+			remove_trait = leader_trait_admiral_brainslug
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_brainslug }
+			remove_trait = leader_trait_general_brainslug
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_brainslug }
+			remove_trait = leader_trait_governor_brainslug
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_brainslug }
+			remove_trait = leader_trait_scientist_brainslug
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_brainslug }
+			remove_trait = leader_trait_ruler_brainslug
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_brainslug }
+			remove_ruler_trait = leader_trait_ruler_brainslug
+		}
+	}
+}
+
+remove_leader_trait_cyborg = {
+	if = {
+		limit = { species = { NOT = { has_trait = trait_cybernetic } } }
+		if = {
+			limit = { has_trait = leader_trait_admiral_cyborg }
+			remove_trait = leader_trait_admiral_cyborg
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_cyborg }
+			remove_trait = leader_trait_general_cyborg
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_cyborg }
+			remove_trait = leader_trait_governor_cyborg
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_cyborg }
+			remove_trait = leader_trait_scientist_cyborg
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_cyborg }
+			remove_trait = leader_trait_ruler_cyborg
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_cyborg }
+			remove_ruler_trait = leader_trait_ruler_cyborg
+		}
+	}
+}
+
+remove_leader_trait_erudite = {
+	if = {
+		limit = { species = { NOT = { has_trait = trait_erudite } } }
+		if = {
+			limit = { has_trait = leader_trait_admiral_erudite }
+			remove_trait = leader_trait_admiral_erudite
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_erudite }
+			remove_trait = leader_trait_general_erudite
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_erudite }
+			remove_trait = leader_trait_governor_erudite
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_erudite }
+			remove_trait = leader_trait_scientist_erudite
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_erudite }
+			remove_trait = leader_trait_ruler_erudite
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_erudite }
+			remove_ruler_trait = leader_trait_ruler_erudite
+		}
+	}
+}
+
+remove_leader_trait_psionic_or_latent_psionic = {
+	if = {
+		limit = {
+			species = {
+				NOR = {
+					has_trait = trait_latent_psionic
+					has_trait = trait_psionic
+				}
+			}
+		}
+		if = {
+			limit = { has_trait = leader_trait_admiral_psionic }
+			remove_trait = leader_trait_admiral_psionic
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_psionic }
+			remove_trait = leader_trait_general_psionic
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_psionic }
+			remove_trait = leader_trait_governor_psionic
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_psionic }
+			remove_trait = leader_trait_scientist_psionic
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_psionic }
+			remove_trait = leader_trait_ruler_psionic
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_psionic }
+			remove_ruler_trait = leader_trait_ruler_psionic
+		}
+	}
+}
+
+remove_leader_trait_synthetic = {
+	if = {
+		limit = { species = { NOT = { has_trait = trait_mechanical } } }
+		if = {
+			limit = { has_trait = leader_trait_admiral_synthetic }
+			remove_trait = leader_trait_admiral_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_synthetic }
+			remove_trait = leader_trait_general_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_synthetic }
+			remove_trait = leader_trait_governor_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_synthetic }
+			remove_trait = leader_trait_scientist_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_synthetic }
+			remove_trait = leader_trait_ruler_synthetic
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_synthetic }
+			remove_ruler_trait = leader_trait_ruler_synthetic
+		}
+	}
+}
+
+add_all_applicable_leader_species_traits = {
+	add_static_applicable_leader_species_traits = yes
+	add_randomized_applicable_leader_species_traits = yes
+}
+
+add_static_applicable_leader_species_traits = {
+	add_leader_trait_cyborg = yes
+	add_leader_trait_erudite = yes
+	add_leader_trait_psionic = yes
+	add_leader_trait_synthetic = yes
+}
+
+# 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
+# 20% chance for the brainslug trait to be added (based on conditions from distar.173/distar.174)
+add_randomized_applicable_leader_species_traits = {
+	random_list = {
+		80 = { }
+		20 = { add_leader_trait_brainslug = yes }
+	}
+	random_list = {
+		80 = { }
+		20 = { add_leader_trait_latent_psionic = yes }
+	}
+}
+
+remove_all_inapplicable_leader_species_traits = {
+	remove_leader_trait_brainslug = yes
+	remove_leader_trait_cyborg = yes
+	remove_leader_trait_erudite = yes
+	remove_leader_trait_psionic_or_latent_psionic = yes
+	remove_leader_trait_synthetic = yes
+}

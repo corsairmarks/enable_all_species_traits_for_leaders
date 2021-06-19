@@ -1,0 +1,87 @@
+namespace = leader_species_traits
+
+# new leaders get every applicable species-specific leader trait
+# note that the code for brainslugs and latent psionics are a 20% chance each and not guaranteed, as in the default game
+country_event = {
+	id = leader_species_traits.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			leader_event = {
+				id = leader_species_traits.5
+			}
+		}
+	}
+}
+
+# modifying a species applies all applicable traits and removes those no longer applicable
+# does not add randomized traits (i.e. latent psionics or brainslugs) but will remove them
+country_event = {
+	id = leader_species_traits.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		every_owned_leader = {
+			limit = { species = { is_same_species = FROM } }
+			add_static_applicable_leader_species_traits = yes
+			# does not add randomized traits so that it's not exploitable by re-modifying the same species
+			remove_all_inapplicable_leader_species_traits = yes
+		}
+
+		every_pool_leader = {
+			limit = { species = { is_same_species = FROM } }
+			add_static_applicable_leader_species_traits = yes
+			# does not add randomized traits so that it's not exploitable by re-modifying the same species
+			remove_all_inapplicable_leader_species_traits = yes
+		}
+	}
+}
+
+# demoted rulers should always keep their brainslug/psionic traits if their species has the right trait
+country_event = {
+	id = leader_species_traits.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			add_static_applicable_leader_species_traits = yes
+			add_leader_trait_brainslug = yes
+			add_leader_trait_latent_psionic = yes
+			remove_all_inapplicable_leader_species_traits = yes
+		}
+	}
+}
+
+# follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
+# should be harmless if executed against another admiral - assuming they had species-appropriate traits in the first place, no changes will be made
+country_event = {
+	id = leader_species_traits.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_active_event = { leader.1 }
+		exists = last_created_leader
+		is_same_value = last_created_leader.owner
+		last_created_leader = { leader_class = admiral }
+	}
+	immediate = {
+		last_created_leader = {
+			leader_event = {
+				id = leader_species_traits.5
+			}
+		}
+	}
+}
+
+# manually triggered above - unified approach to randomizing traits for new leaders
+leader_event = {
+	id = leader_species_traits.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "leader_species_traits.5 fired for [This.GetName] ([This.Species.GetName])"
+		add_all_applicable_leader_species_traits = yes
+		remove_all_inapplicable_leader_species_traits = yes
+	}
+}

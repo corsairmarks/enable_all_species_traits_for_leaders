@@ -1,0 +1,37 @@
+# a new leader is generated for an empire, to be available for recruitment
+# ROOT = country
+# FROM = leader
+on_leader_spawned = {
+	events = {
+		leader_species_traits.1
+	}
+}
+
+# a Special Project to apply a species modification template has completed
+# Note that this will trigger once for each combination of planet & original species
+# THIS = country
+# FROM = species (Post Modification)
+on_modification_complete = {
+	events = {
+		leader_species_traits.2
+	}
+}
+
+# executed when the ruler is ousted and goes back to their pre-ruler class
+# THIS = country
+# FROM = previous Ruler, already has the new class
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		leader_species_traits.3
+	}
+}
+
+# THIS = owner of fleet 1 (combatant)
+# FROM = owner of fleet 2 (destroyed)
+# FROMFROM = fleet 1
+# FROMFROMFROM = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+		leader_species_traits.4
+	}
+}
