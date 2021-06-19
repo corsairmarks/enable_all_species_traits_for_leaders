@@ -1,5 +1,19 @@
 namespace = leader_species_traits
 
+# flag mod as active
+event = {
+	id = leader_species_traits.13
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = leader_species_traits_installed }
+	}
+	immediate = {
+		set_global_flag = leader_species_traits_installed
+	}
+}
+
 # new leaders get every applicable species-specific leader trait
 # note that the code for brainslugs and latent psionics are a 20% chance each and not guaranteed, as in the default game
 country_event = {
@@ -46,8 +60,14 @@ country_event = {
 	immediate = {
 		FROM = {
 			add_static_applicable_leader_species_traits = yes
-			add_leader_trait_brainslug = yes
-			add_leader_trait_latent_psionic = yes
+			if = {
+				limit = { has_ruler_trait = leader_trait_ruler_brainslug }
+				add_leader_trait_brainslug = yes
+			}
+			if = {
+				limit = { has_ruler_trait = leader_trait_ruler_psionic }
+				add_leader_trait_latent_psionic = yes
+			}
 			remove_all_inapplicable_leader_species_traits = yes
 		}
 	}
@@ -80,7 +100,6 @@ leader_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "leader_species_traits.5 fired for [This.GetName] ([This.Species.GetName])"
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
 	}

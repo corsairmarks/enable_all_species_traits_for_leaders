@@ -1,3 +1,17 @@
+# fires when the game starts
+on_game_start = {
+	events = {
+		leader_species_traits.13 # flag mod as installed
+	}
+}
+
+# no scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		leader_species_traits.13 # flag mod as installed, just in case this mod was added after game start
+	}
+}
+
 # a new leader is generated for an empire, to be available for recruitment
 # ROOT = country
 # FROM = leader

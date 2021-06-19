@@ -32,3 +32,4 @@ Overriding events from the default game causes error logs.  Expect to see one li
 * 1.1.0 New admirals gained from the "Promising Officer" event after a victorious battle (`leader.1`) will be given appropriate species traits
 * 1.1.1 Updated README, unified event code for randomizing species traits on a new leader
 * 1.1.2 Actually update version numbers
+* 1.2.0 Add event to flag mod as installed
