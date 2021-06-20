@@ -18,6 +18,10 @@ This mod overrides one default event related to adding leader traits: `distar.17
 
 In contrast, all other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
+### Post-Game Start
+
+This mod can be safely added or removed from your save game after the game has started.  It is implemented entirely through custom events (and custom triggers). If you remove it, your game will work normally.
+
 ## Known Issues
 
 Overriding events from the default game causes error logs.  Expect to see one line similar to this in error.log:
@@ -33,3 +37,7 @@ Overriding events from the default game causes error logs.  Expect to see one li
 * 1.1.1 Updated README, unified event code for randomizing species traits on a new leader
 * 1.1.2 Actually update version numbers
 * 1.2.0 Add event to flag mod as installed
+
+## Source Code
+
+[Hosted on GitHub](https://github.com/corsairmarks/enable_all_species_traits_for_leaders)
