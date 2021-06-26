@@ -1,0 +1,29 @@
+According to the Paradox Development Studios' "User Modding
+Rules of PDS Games" I cannot license this code to you (point
+4).
+
+Source: https://forum.paradoxplaza.com/forum/threads/updated-14-06-18-rules-for-user-made-mods-and-edits-of-pds-games.708039/
+
+> The User Mod may not include ANY kind of license or claim of
+copyright distributed with the mod (You may have a Credits
+section).
+
+That means that all code written by me is protected by my
+personal, automatic copyright (per US law).
+
+Source: https://www.copyright.gov/help/faq/faq-general.html
+
+Based on my understanding of US copyright law:
+
+> **When is my work protected?**
+> Your work is under copyright protection the moment it is
+> created and fixed in a tangible form that it is perceptible
+> either directly or with the aid of a machine or device.
+
+and the PDS modding guidelines (point 5):
+
+> The User Mod should respect the work of other modders and not
+> include any work without the consent of that modder.
+
+You may not reuse the portions of this codebase created by me
+(Nicholas Butcher) in other mods without my express permission.
