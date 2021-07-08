@@ -38,11 +38,11 @@ Overriding events from the default game causes error logs.  Expect to see one li
 * 1.1.2 Actually update version numbers
 * 1.2.0 Add event to flag mod as installed
 * 1.2.1 Remove extra images files to keep distribution lightweight (no script changes)
-* 1.3.0 Remove monthly pulse for mod flag
+* 1.3.0 Remove monthly pulse for mod flag, enhance compatibility for other mods to indicate whena leader's species has changed
 
 ## Source Code
 
-[Hosted on GitHub](https://github.com/corsairmarks/enable_all_species_traits_for_leaders)
+Hosted on [GitHub](https://github.com/corsairmarks/enable_all_species_traits_for_leaders)
 
 ### Development Notes
 
