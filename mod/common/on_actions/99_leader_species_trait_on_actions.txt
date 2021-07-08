@@ -42,3 +42,14 @@ on_fleet_destroyed_perp = {
 		leader_species_traits.4
 	}
 }
+
+# Fires when my custom code changes a leader's species.  You might attach an event
+# here to handle custom traits in another mod that should be added or removed (or
+# converted) based on information about the leader (possibly taking in to account
+# things like their owner).
+# THIS = leader (post-modification)
+on_leader_species_changed = {
+	events = {
+		leader_species_traits.6
+	}
+}
