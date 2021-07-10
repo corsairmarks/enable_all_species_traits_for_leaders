@@ -191,6 +191,13 @@ add_leader_trait_psionic = {
 				NOT = { has_trait = trait_latent_psionic }
 				has_trait = trait_psionic
 			}
+			NOR = {
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_ruler_chosen
+			}
 		}
 		if = {
 			limit = {
@@ -422,6 +429,13 @@ remove_leader_trait_psionic_or_latent_psionic = {
 					has_trait = trait_latent_psionic
 					has_trait = trait_psionic
 				}
+			}
+			OR = {
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_ruler_chosen
 			}
 		}
 		if = {
