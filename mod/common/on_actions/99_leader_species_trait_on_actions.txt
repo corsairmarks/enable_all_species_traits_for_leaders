@@ -5,6 +5,13 @@ on_game_start = {
 	}
 }
 
+# fired when loading a single-player game
+on_single_player_save_game_load = {
+	events = {
+		leader_species_traits.13 # flag mod as installed
+	}
+}
+
 # a new leader is generated for an empire, to be available for recruitment
 # ROOT = country
 # FROM = leader
