@@ -288,7 +288,15 @@ add_leader_trait_chosen = {
 
 add_leader_trait_synthetic = {
 	if = {
-		limit = { species = { has_trait = trait_mechanical } }
+		limit = {
+			species = { has_trait = trait_mechanical }
+			owner = {
+				OR = {
+					is_synthetic_empire = yes
+					has_technology = tech_synthetic_leaders
+				}
+			}
+		}
 		if = {
 			limit = {
 				leader_class = admiral
@@ -468,6 +476,7 @@ remove_leader_trait_psionic_or_latent_psionic = {
 remove_leader_trait_synthetic = {
 	if = {
 		limit = { species = { NOT = { has_trait = trait_mechanical } } }
+		# leaders are allowed to keep synthetic even if their owner ian't a synthetic empire or has synth leaders
 		if = {
 			limit = { has_trait = leader_trait_admiral_synthetic }
 			remove_trait = leader_trait_admiral_synthetic
