@@ -1,4 +1,4 @@
-name="Enable All Eligible Species Traits for Leaders"
+name="Leader Traits: All Eligible Species Traits"
 tags={
 	"Gameplay"
 	"Leaders"

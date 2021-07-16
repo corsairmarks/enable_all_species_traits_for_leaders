@@ -18,7 +18,15 @@ This mod overrides one default event related to adding leader traits: `distar.17
 
 In contrast, all other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
-### Post-Game Start
+### Recommended Companion Mods
+
+Like leaders?  Try a couple of my other leader-related mods that work with this one.
+
+* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) will help your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
+* [Leader Traits: Better Randomisation]() will help your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
+* [Retain Leaders from Integrated Subjects]() will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
+
+### When to Install
 
 This mod can be safely added or removed from your save game after the game has started.  It is implemented entirely through custom events (and custom triggers). If you remove it, your game will work normally.
 
