@@ -23,8 +23,8 @@ In contrast, all other the new logic is implemented in standalone events and eff
 Like leaders?  Try a couple of my other leader-related mods that work with this one.
 
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) will help your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
-* [Leader Traits: Enhanced Randomisation]() will help your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
-* [Retain Leaders from Integrated Subjects]() will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) will help your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 
 ### When to Install
 
