@@ -32,7 +32,7 @@ Like leaders?  Try a couple of my other leader-related mods that work with this 
 
 ### When to Install
 
-This mod can be safely added or removed from your save game after the game has started.  It is implemented entirely through custom events (and custom triggers). If you remove it, your game will work normally.
+This mod can be safely added or removed from your save game after the game has started.  It is implemented through custom events and effects without adding gameplay objects.  If you remove it, your game will work normally.
 
 ## Known Issues
 

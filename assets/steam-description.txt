@@ -34,8 +34,7 @@ Like leaders?  Try a couple of my other leader-related mods that work with this 
 
 [h3]When to Install[/h3]
 
-This mod can be safely added or removed from your save game after the game has started.  It is implemented entirely through custom events (and custom triggers). If you remove it, your game will work normally.
-
+This mod can be safely added or removed from your save game after the game has started.  It is implemented through custom events and effects without adding gameplay objects.  If you remove it, your game will work normally.
 [h2]Known Issues[/h2]
 
 Overriding events from the default game causes error logs.  Expect to see two lines similar to this in error.log:
