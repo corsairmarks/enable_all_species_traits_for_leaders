@@ -119,3 +119,65 @@ leader_event = {
 		remove_all_inapplicable_leader_species_traits = yes
 	}
 }
+
+# mean time-to-happen
+country_event = {
+	id = leader_species_traits.7
+	title = leader_species_traits.7.name
+	desc = leader_species_traits.7.desc
+	picture = GFX_evt_hive_mind
+	show_sound = event_alien_nature
+
+	trigger = {
+		any_owned_leader = {
+			species = { has_trait = trait_brainslug }
+			NOR = {
+				has_trait = leader_trait_admiral_brainslug
+				has_trait = leader_trait_general_brainslug
+				has_trait = leader_trait_governor_brainslug
+				has_trait = leader_trait_scientist_brainslug
+				has_trait = leader_trait_ruler_brainslug
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 220
+	}
+
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				species = { has_trait = trait_brainslug }
+				NOR = {
+					has_trait = leader_trait_admiral_brainslug
+					has_trait = leader_trait_general_brainslug
+					has_trait = leader_trait_governor_brainslug
+					has_trait = leader_trait_scientist_brainslug
+					has_trait = leader_trait_ruler_brainslug
+				}
+			}
+			save_event_target_as = brainslugged_leader
+		}
+	}
+
+	option = {
+		name = leader_species_traits.7.a
+		event_target:brainslugged_leader = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
+					add_ruler_trait = leader_trait_ruler_brainslug
+				}
+			}
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_brainslug }
+				general = { add_trait = leader_trait_general_brainslug }
+				governor = { add_trait = leader_trait_governor_brainslug }
+				scientist = { add_trait = leader_trait_scientist_brainslug }
+				ruler = { add_trait = leader_trait_ruler_brainslug }
+			}
+		}
+	}
+}

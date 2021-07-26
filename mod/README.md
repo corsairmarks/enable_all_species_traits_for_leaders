@@ -2,7 +2,7 @@
 
 This mod ensures that your leaders can have every species-based leader trait that their species makes them eligible for.  Somehow managed to get a Psionic, Erudite, Cybernetic, Brainslugged species?  Now your leaders can have all of the traits together!
 
-Like the default game, this mod does **not** guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).
+Like the default game, this mod does **not** guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).  The game includes an event for leaders of a Latent Psionic species randomly gaining the Psionic leader trait, but it was limited to the main species of an empire.  That has been altered so any Latent Psionic leaders have a chance to randomly manifest Psionic abilities.  Additionally, an event functionally similar has been added for leaders from a species with Brain Slugs to gain the Brain Slug trait.
 
 # Changes
 
@@ -50,6 +50,9 @@ Overriding events from the default game causes error logs.  Expect to see one li
     * Enhance compatibility for other mods to indicate when a leader's species has changed
     * Renamed "Leader Traits: All Species Traits Eligible" and new thumbnail
     * More preview images
+* 1.4.0 Latent Psionics and Brainslugs
+    * Improve the event to gain the Psionic trait for Latent Psionic species `utopia.2605` to allow _any_ Latent Psionic species' leaders to gain the trait, not only the main species of an empire
+    * Add event based on `utopia.2605` for leaders to randomly gain the Brain Slug trait
 
 ## Source Code
 

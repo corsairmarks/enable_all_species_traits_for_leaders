@@ -97,3 +97,75 @@ country_event = {
 		}
 	}
 }
+
+# override the default latenet psychic event - allow any leader with a species that has latent psionics, not just the main species
+country_event = {
+	id = utopia.2605
+	title = utopia.2605.name
+	desc = utopia.2605.desc
+	picture = GFX_evt_psionics
+	show_sound = event_psionic
+
+	trigger = {
+		any_owned_leader = {
+			species = { has_trait = trait_latent_psionic }
+			NOR = {
+				has_trait = leader_trait_admiral_psionic
+				has_trait = leader_trait_general_psionic
+				has_trait = leader_trait_governor_psionic
+				has_trait = leader_trait_scientist_psionic
+				has_trait = leader_trait_ruler_psionic
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
+				has_trait = leader_trait_ruler_chosen
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 220
+	}
+
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				species = { has_trait = trait_latent_psionic }
+				NOR = {
+					has_trait = leader_trait_admiral_psionic
+					has_trait = leader_trait_general_psionic
+					has_trait = leader_trait_governor_psionic
+					has_trait = leader_trait_scientist_psionic
+					has_trait = leader_trait_ruler_psionic
+					has_trait = leader_trait_admiral_chosen
+					has_trait = leader_trait_general_chosen
+					has_trait = leader_trait_governor_chosen
+					has_trait = leader_trait_scientist_chosen
+					has_trait = leader_trait_ruler_chosen
+				}
+			}
+			save_event_target_as = psionic_leader
+		}
+	}
+
+	option = {
+		name = utopia.2605.a
+		event_target:psionic_leader = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+			}
+			switch = {
+				trigger = leader_class
+				admiral = { add_trait = leader_trait_admiral_psionic }
+				general = { add_trait = leader_trait_general_psionic }
+				governor = { add_trait = leader_trait_governor_psionic }
+				scientist = { add_trait = leader_trait_scientist_psionic }
+				ruler = { add_trait = leader_trait_ruler_psionic }
+			}
+		}
+	}
+}
