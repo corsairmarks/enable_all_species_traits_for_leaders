@@ -34,10 +34,11 @@ This mod can be safely added or removed from your save game after the game has s
 
 [h2]Known Issues[/h2]
 
-Overriding events from the default game causes error logs.  Expect to see one line similar to this in error.log:
+Overriding events from the default game causes error logs.  Expect to see two lines similar to this in error.log:
 
 [code]
-[22:30:44][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events.txt line: 5256
+[13:36:36][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events.txt line: 5256
+[13:36:37][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1456
 [/code]
 
 [h2]Changelog[/h2]

@@ -32,10 +32,11 @@ This mod can be safely added or removed from your save game after the game has s
 
 ## Known Issues
 
-Overriding events from the default game causes error logs.  Expect to see one line similar to this in error.log:
+Overriding events from the default game causes error logs.  Expect to see two lines similar to this in error.log:
 
 ```
-[22:30:44][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events.txt line: 5256
+[13:36:36][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events.txt line: 5256
+[13:36:37][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1456
 ```
 
 ## Changelog
@@ -53,6 +54,7 @@ Overriding events from the default game causes error logs.  Expect to see one li
 * 1.4.0 Latent Psionics and Brainslugs
     * Improve the event to gain the Psionic trait for Latent Psionic species `utopia.2605` to allow _any_ Latent Psionic species' leaders to gain the trait, not only the main species of an empire
     * Add event based on `utopia.2605` for leaders to randomly gain the Brain Slug trait
+    * Reduced mean time-to-happen of both of the above events to 10 years (down from 18 years, 4 months)
 
 ## Source Code
 
