@@ -123,7 +123,7 @@ leader_event = {
 # mean time-to-happen
 country_event = {
 	id = leader_species_traits.7
-	title = leader_species_traits.7.name
+	title = leader_species_traits.7.title
 	desc = leader_species_traits.7.desc
 	picture = GFX_evt_hive_mind
 	show_sound = event_alien_nature
