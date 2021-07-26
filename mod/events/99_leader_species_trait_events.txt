@@ -138,6 +138,15 @@ country_event = {
 				has_trait = leader_trait_scientist_brainslug
 				has_trait = leader_trait_ruler_brainslug
 			}
+			OR = {
+				NOT = { exists = pop_faction }
+				pop_faction = {
+					NOR = {
+						is_pop_faction_type = isolationist
+						is_pop_faction_type = supremacist
+					}
+				}
+			}
 		}
 	}
 
@@ -155,6 +164,15 @@ country_event = {
 					has_trait = leader_trait_governor_brainslug
 					has_trait = leader_trait_scientist_brainslug
 					has_trait = leader_trait_ruler_brainslug
+				}
+				OR = {
+					NOT = { exists = pop_faction }
+					pop_faction = {
+						NOR = {
+							is_pop_faction_type = isolationist
+							is_pop_faction_type = supremacist
+						}
+					}
 				}
 			}
 			save_event_target_as = brainslugged_leader
