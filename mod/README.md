@@ -14,9 +14,13 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-This mod overrides one default event related to adding leader traits: `distar.174`.  Other mods that make changes to the same event will conflict with this one.  The easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file `events/000_overridden_leader_species_trait_events.txt`.  The override is just a cleaner way to add the brainslug trait - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
+This mod overrides two default events related to adding leader traits: `distar.174` and `utopia.2605`.  Other mods that make changes to one or both of the same events will conflict with this one.
 
-In contrast, all other the new logic is implemented in standalone events and effects which should not conflict with other mods.
+For `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file `events/000_overridden_leader_species_trait_events.txt`.  The override is just a cleaner way to add the initial brainslug trait for hireable leaders - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
+
+`utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species. I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
+
+All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
 ### Recommended Companion Mods
 

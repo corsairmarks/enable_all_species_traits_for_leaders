@@ -6,17 +6,21 @@ Like the default game, this mod does [b]not[/b] guarantee psionic traits for Lat
 
 [h1]Changes[/h1]
 
-This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([i]on_leader_spawned[/i]), when a species is modified ([i]on_modification_complete[/i] - will not add latent psionics or brainslugs), or when a ruler returns to their previous leader job ([i]on_ruler_back_to_pre_ruler_class[/i] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
+This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([b]on_leader_spawned[/b]), when a species is modified ([b]on_modification_complete[/b] - will not add latent psionics or brainslugs), or when a ruler returns to their previous leader job ([b]on_ruler_back_to_pre_ruler_class[/b] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
 
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?"  So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
 
-The original inspiration for me to create this mod was the "Promising Officer" event which rewards admirals with two traits, but none of their appropriate species traits.  This seems to occur because the built-in effect to spawn a leader [i]create_leader[/i] completely overwrites any species traits whenever [i]traits = { }[/i] are specified (as in this event [i]leader.1[/i]).  Currently, this mod only addresses this one instance, but if you find another place that would benefit from an event-created leader having their species traits added, please leave a comment describing which event.
+The original inspiration for me to create this mod was the "Promising Officer" event which rewards admirals with two traits, but none of their appropriate species traits.  This seems to occur because the built-in effect to spawn a leader [b]create_leader[/b] completely overwrites any species traits whenever [b]traits = { }[/b] are specified (as in this event [b]leader.1[/b]).  Currently, this mod only addresses this one instance, but if you find another place that would benefit from an event-created leader having their species traits added, please leave a comment describing which event.
 
 [h2]Compatibility[/h2]
 
-This mod overrides one default event related to adding leader traits: [i]distar.174[/i].  Other mods that make changes to the same event will conflict with this one.  The easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file [i]events/000_overridden_leader_species_trait_events.txt[/i].  The override is just a cleaner way to add the brainslug trait - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
+This mod overrides two default events related to adding leader traits: [b]distar.174[/b] and [b]utopia.2605[/b].  Other mods that make changes to one or both of the same events will conflict with this one.
 
-In contrast, all other the new logic is implemented in standalone events and effects which should not conflict with other mods.
+For [b]distar.174[/b], the easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file [b]events/000_overridden_leader_species_trait_events.txt[/b].  The override is just a cleaner way to add the initial brainslug trait for hireable leaders - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
+
+[b]utopia.2605[/b] is the event for leaders randomly gaining the Psionic trait from Psionic species. I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
+
+All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
 [h3]Recommended Companion Mods[/h3]
 
