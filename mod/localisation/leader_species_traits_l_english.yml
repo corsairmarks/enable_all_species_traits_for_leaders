@@ -1,4 +1,5 @@
 ﻿l_english:
+ utopia.2605.title: "[psionic_leader.GetName] Revealed as Psychic"
  leader_species_traits.7.title: "[brainslugged_leader.GetName] Joins with Neural Symbiont"
- leader_species_traits.7.desc: "As per our agreement with the neural symbionts we have come to call "brain slugs," only willing hosts are joined with them. Few change their minds after rejecting a symbiont, but [brainslugged_leader.GetTitle] [brainslugged_leader.GetName] recently resolved to host a neural symbiont. After the initiation ceremony and subsequent medical observation, [brainslugged_leader.GetObjectPronoun] has returned to service. Their connection to the symbionts' collective consciousness will undoubtably improve their performance."
- leader_species_traits.7.a: "Their union shall advance the [Root.GetName]."
+ leader_species_traits.7.desc: "As per our agreement with the neural symbionts we have come to call "brain slugs," only willing hosts are joined with them. Few change their minds after rejecting a symbiont, but [brainslugged_leader.GetTitle] [brainslugged_leader.GetName] recently resolved to host a neural symbiont. After the initiation ceremony and subsequent medical observation, [brainslugged_leader.GetSubjectPronoun] [brainslugged_leader.GetHasHave] returned to service. [brainslugged_leader.GetPossPronounCap] connection to the symbionts' collective consciousness will undoubtably improve [brainslugged_leader.GetPossPronoun] performance."
+ leader_species_traits.7.a: "[brainslugged_leader.GetPossPronounCap] union shall advance the [Root.GetName]."
