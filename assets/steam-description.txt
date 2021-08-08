@@ -30,6 +30,7 @@ Like leaders?  Try a couple of my other leader-related mods that work with this 
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] will help your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] will help your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
 
 [h3]When to Install[/h3]
