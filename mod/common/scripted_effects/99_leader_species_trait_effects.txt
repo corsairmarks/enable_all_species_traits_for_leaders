@@ -518,14 +518,31 @@ add_static_applicable_leader_species_traits = {
 
 # 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
 # 20% chance for the brainslug trait to be added (based on conditions from distar.173/distar.174)
+# Only attempts to roll for each trait if and only if the leader's species has the corresponding trait and
+# the leader has not already rolled (determined by a flag). More fair because existing leaders now get a 1-time
+# chance to gain the appropriate trait if their species has it.
 add_randomized_applicable_leader_species_traits = {
-	random_list = {
-		80 = { }
-		20 = { add_leader_trait_brainslug = yes }
+	if = {
+		limit = {
+			species = { has_trait = trait_brainslug }
+			NOT = { has_leader_flag = leader_trait_brainslug_chance }
+		}
+		random_list = {
+			80 = { }
+			20 = { add_leader_trait_brainslug = yes }
+		}
+		set_leader_flag = leader_trait_brainslug_chance
 	}
-	random_list = {
-		80 = { }
-		20 = { add_leader_trait_latent_psionic = yes }
+	if = {
+		limit = {
+			species = { has_trait = trait_latent_psionic }
+			NOT = { has_leader_flag = leader_trait_latent_psionic_chance }
+		}
+		random_list = {
+			80 = { }
+			20 = { add_leader_trait_latent_psionic = yes }
+		}
+		set_leader_flag = leader_trait_latent_psionic_chance
 	}
 }
 

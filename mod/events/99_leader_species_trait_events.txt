@@ -36,16 +36,16 @@ country_event = {
 	hide_window = yes
 	immediate = {
 		every_owned_leader = {
-			limit = { species = { is_same_species = FROM } }
+			limit = { species = { is_exact_same_species = FROM } }
 			leader_event = {
-				id = leader_species_traits.6
+				id = leader_species_traits.5
 			}
 		}
 
 		every_pool_leader = {
-			limit = { species = { is_same_species = FROM } }
+			limit = { species = { is_exact_same_species = FROM } }
 			leader_event = {
-				id = leader_species_traits.6
+				id = leader_species_traits.5
 			}
 		}
 	}
@@ -98,24 +98,13 @@ country_event = {
 }
 
 # manually triggered above - unified approach to randomizing traits for new leaders
+# also triggered by custom on_action on_leader_species_changed
 leader_event = {
 	id = leader_species_traits.5
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		add_all_applicable_leader_species_traits = yes
-		remove_all_inapplicable_leader_species_traits = yes
-	}
-}
-
-# manually triggered above - unified approach to ensuring static traits for existing leaders
-leader_event = {
-	id = leader_species_traits.6
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		add_static_applicable_leader_species_traits = yes
-		# does not add randomized traits so that it's not exploitable by re-modifying the same species
 		remove_all_inapplicable_leader_species_traits = yes
 	}
 }

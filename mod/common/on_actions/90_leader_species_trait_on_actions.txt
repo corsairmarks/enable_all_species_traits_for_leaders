@@ -57,6 +57,6 @@ on_fleet_destroyed_perp = {
 # THIS = leader (post-modification)
 on_leader_species_changed = {
 	events = {
-		leader_species_traits.6
+		leader_species_traits.5
 	}
 }
