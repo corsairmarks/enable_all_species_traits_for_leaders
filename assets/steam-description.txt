@@ -6,7 +6,7 @@ Like the default game, this mod does [b]not[/b] guarantee psionic traits for Lat
 
 [h1]Changes[/h1]
 
-This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([b]on_leader_spawned[/b]), when a species is modified ([b]on_modification_complete[/b] - will not add latent psionics or brainslugs), or when a ruler returns to their previous leader job ([b]on_ruler_back_to_pre_ruler_class[/b] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
+This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([b]on_leader_spawned[/b]), when a species is modified ([b]on_modification_complete[/b] - including a one-time, independent chance for latent psionics or brainslugs), or when a ruler returns to their previous leader job ([b]on_ruler_back_to_pre_ruler_class[/b] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
 
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?"  So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
 
