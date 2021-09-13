@@ -14,6 +14,8 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
+Built for Stellaris version 3.0.\* "Dick."
+
 This mod overrides two default events related to adding leader traits: `distar.174` and `utopia.2605`.  Other mods that make changes to one or both of the same events will conflict with this one.
 
 For `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file `events/000_overridden_leader_species_trait_events.txt`.  The override is just a cleaner way to add the initial brainslug trait for hireable leaders - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
