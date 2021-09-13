@@ -62,7 +62,9 @@ Overriding events from the default game causes error logs.  Expect to see two li
     * Improve the event to gain the Psionic trait for Latent Psionic species `utopia.2605` to allow _any_ Latent Psionic species' leaders to gain the trait, not only the main species of an empire
     * Add event based on `utopia.2605` for leaders to randomly gain the Brain Slug trait
     * Reduced mean time-to-happen of both of the above events to 10 years (down from 18 years, 4 months)
-* 1.4.1 Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
+* 1.4.1 Minor bugfixes
+    * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
+    * Properly restrict trait changes to the _exact_ species that was modified
 
 ## Source Code
 
