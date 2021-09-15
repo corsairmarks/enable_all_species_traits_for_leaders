@@ -65,7 +65,7 @@ Overriding events from the default game causes error logs.  Expect to see two li
 * 1.4.1 Minor bugfixes
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
-* 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem"
+* 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
 
 ## Source Code
 
