@@ -14,7 +14,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.0.\* "Dick."
+Built for Stellaris version 3.1.\* "Lem."
 
 This mod overrides two default events related to adding leader traits: `distar.174` and `utopia.2605`.  Other mods that make changes to one or both of the same events will conflict with this one.
 
@@ -65,6 +65,7 @@ Overriding events from the default game causes error logs.  Expect to see two li
 * 1.4.1 Minor bugfixes
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
+* 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem"
 
 ## Source Code
 
