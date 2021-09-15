@@ -98,7 +98,7 @@ country_event = {
 	}
 }
 
-# override the default latenet psychic event - allow any leader with a species that has latent psionics, not just the main species
+# override the default latent psychic event - allow any leader with a species that has latent psionics, not just the main species
 country_event = {
 	id = utopia.2605
 	title = utopia.2605.title
