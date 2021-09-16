@@ -68,7 +68,7 @@ Overriding events from the default game causes error logs.  Expect to see two li
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
 * 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
-* 1.6.0 Add handling for Clone Army admiral trait
+* 2.0.0 Add handling for Clone Army admiral trait
 
 ## Source Code
 
