@@ -339,6 +339,69 @@ add_leader_trait_synthetic = {
 	}
 }
 
+add_leader_trait_clone_army_admiral = {
+	if = {
+		limit = {
+			leader_class = admiral
+			species = { has_trait = trait_clone_soldier_infertile }
+			NOT = { has_trait = leader_trait_clone_army_admiral }
+		}
+		add_trait = leader_trait_clone_army_admiral
+	}
+}
+
+add_leader_trait_clone_army_full_admiral = {
+	if = {
+		limit = {
+			leader_class = admiral
+			species = { has_trait = trait_clone_soldier_infertile_full_potential }
+			NOT = { has_trait = leader_trait_clone_army_full_admiral }
+		}
+		add_trait = leader_trait_clone_army_full_admiral
+	}
+}
+
+add_leader_trait_clone_army_fertile_admiral = {
+	if = {
+		limit = {
+			leader_class = admiral
+			species = { has_trait = trait_clone_soldier_fertile }
+			NOT = { has_trait = leader_trait_clone_army_fertile_admiral }
+		}
+		add_trait = leader_trait_clone_army_fertile_admiral
+	}
+}
+
+remove_leader_trait_clone_army_admiral = {
+	if = {
+		limit = {
+			species = { NOT = { has_trait = trait_clone_soldier_infertile } }
+			has_trait = leader_trait_clone_army_admiral
+		}
+		remove_trait = leader_trait_clone_army_admiral
+	}
+}
+
+remove_leader_trait_clone_army_full_admiral = {
+	if = {
+		limit = {
+			species = { NOT = { has_trait = trait_clone_soldier_infertile_full_potential } }
+			has_trait = leader_trait_clone_army_full_admiral
+		}
+		remove_trait = leader_trait_clone_army_full_admiral
+	}
+}
+
+remove_leader_trait_clone_army_fertile_admiral = {
+	if = {
+		limit = {
+			species = { NOT = { has_trait = trait_clone_soldier_fertile } }
+			has_trait = leader_trait_clone_army_fertile_admiral
+		}
+		remove_trait = leader_trait_clone_army_fertile_admiral
+	}
+}
+
 remove_leader_trait_brainslug = {
 	if = {
 		limit = { species = { NOT = { has_trait = trait_brainslug } } }
@@ -514,6 +577,9 @@ add_static_applicable_leader_species_traits = {
 	add_leader_trait_erudite = yes
 	add_leader_trait_psionic = yes
 	add_leader_trait_synthetic = yes
+	add_leader_trait_clone_army_admiral = yes
+	add_leader_trait_clone_army_full_admiral = yes
+	add_leader_trait_clone_army_fertile_admiral = yes
 }
 
 # 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
@@ -552,4 +618,7 @@ remove_all_inapplicable_leader_species_traits = {
 	remove_leader_trait_erudite = yes
 	remove_leader_trait_psionic_or_latent_psionic = yes
 	remove_leader_trait_synthetic = yes
+	remove_leader_trait_clone_army_admiral = yes
+	remove_leader_trait_clone_army_full_admiral = yes
+	remove_leader_trait_clone_army_fertile_admiral = yes
 }
