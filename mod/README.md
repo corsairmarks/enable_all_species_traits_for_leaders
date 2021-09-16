@@ -4,6 +4,8 @@ This mod ensures that your leaders can have every species-based leader trait tha
 
 Like the default game, this mod does **not** guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).  The game includes an event for leaders of a Latent Psionic species randomly gaining the Psionic leader trait, but it was limited to the main species of an empire.  That has been altered so any Latent Psionic leaders have a chance to randomly manifest Psionic abilities.  Additionally, an event functionally similar has been added for leaders from a species with Brain Slugs to gain the Brain Slug trait.
 
+New for 3.1.1: handle the Clone Army origin's special admiral traits.
+
 # Changes
 
 This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned (`on_leader_spawned`), when a species is modified (`on_modification_complete` - including a one-time, independent chance for latent psionics or brainslugs), or when a ruler returns to their previous leader job (`on_ruler_back_to_pre_ruler_class` - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
@@ -66,6 +68,7 @@ Overriding events from the default game causes error logs.  Expect to see two li
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
 * 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
+* 1.6.0 Add handling for Clone Army admiral trait
 
 ## Source Code
 
