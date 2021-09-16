@@ -14,7 +14,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 [h2]Compatibility[/h2]
 
-Built for Stellaris version 3.1.* "Lem."
+Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
 
 This mod overrides two default events related to adding leader traits: [b]distar.174[/b] and [b]utopia.2605[/b].  Other mods that make changes to one or both of the same events will conflict with this one.
 
