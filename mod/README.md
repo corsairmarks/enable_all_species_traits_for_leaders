@@ -18,11 +18,13 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
 
-This mod overrides two default events related to adding leader traits: `distar.174` and `utopia.2605`.  Other mods that make changes to one or both of the same events will conflict with this one.
+This mod overrides three default events related to adding leader traits: `distar.174` ,`utopia.2508` , and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.
 
 For `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file `events/000_overridden_leader_species_trait_events.txt`.  The override is just a cleaner way to add the initial brainslug trait for hireable leaders - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
 
-`utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species. I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
+`utopia.2508` is the default event for adding or removing Erudite leader traits.  That event uses the effect `remove_leader_traits_after_modification` which is also overridden.  If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that _any_ species in your empire is modified.
+
+`utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species.  I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
 
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
@@ -41,11 +43,13 @@ This mod can be safely added or removed from your save game after the game has s
 
 ## Known Issues
 
-Overriding events from the default game causes error logs.  Expect to see two lines similar to this in error.log:
+Overriding events and effects from the default game causes error logs.  Expect to see four lines similar to this in error.log:
 
 ```
-[13:36:36][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events.txt line: 5256
-[13:36:37][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1456
+[17:49:29][game_singleobjectdatabase.h:147]: Object with key: remove_leader_traits_after_modification already exists
+[17:49:29][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5417
+[17:49:29][eventmanager.cpp:355]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 579
+[17:49:29][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1492
 ```
 
 ## Changelog
@@ -69,6 +73,7 @@ Overriding events from the default game causes error logs.  Expect to see two li
     * Properly restrict trait changes to the _exact_ species that was modified
 * 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
 * 2.0.0 Add handling for Clone Army admiral traits
+* 2.0.1 Fix issue where the Erudite leader trait was deleted from species that had a combo of Erudite plus one or more of Latent Psionic, Psionic, or Cybernetic when other species were modified
 
 ## Source Code
 
