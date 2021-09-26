@@ -3,13 +3,13 @@ namespace = utopia
 
 # majority commented out because overrides were unnecessary - the new events clean up any weirdness
 
-# # override default erudite on_modification_complete event
-# country_event = {
-# 	id = utopia.2508
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
+# override default erudite on_modification_complete event
+country_event = {
+	id = utopia.2508
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = { }
+}
 
 # # override the default erudite on_leader_spawned event
 # country_event = {
