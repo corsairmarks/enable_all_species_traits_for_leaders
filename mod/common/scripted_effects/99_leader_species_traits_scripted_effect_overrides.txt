@@ -1,0 +1,2 @@
+# necessary otherwise leaders of other Erudite + Latent Psionic/Psionic/Cyborg species lose the Erudite leader trait
+remove_leader_traits_after_modification = { }
