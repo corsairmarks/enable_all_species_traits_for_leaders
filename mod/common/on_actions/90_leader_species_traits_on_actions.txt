@@ -1,60 +1,69 @@
-# fires when the game starts
+# fired when the game starts
 on_game_start = {
 	events = {
 		leader_species_traits.13 # flag mod as installed
 	}
 }
 
+# fired when the game starts
+# this = country
+on_game_start_country = {
+	events = {
+		leader_species_traits.8
+	}
+}
+
 # fired when loading a single-player game
 on_single_player_save_game_load = {
 	events = {
+		leader_species_traits.6
 		leader_species_traits.13 # flag mod as installed
 	}
 }
 
-# a new leader is generated for an empire, to be available for recruitment
-# ROOT = country
-# FROM = leader
+# fired when a new leader is generated for an empire, to be available for recruitment
+# this = country
+# from = leader
 on_leader_spawned = {
 	events = {
 		leader_species_traits.1
 	}
 }
 
-# a Special Project to apply a species modification template has completed
+# fired when a Special Project to apply a species modification template has completed
 # Note that this will trigger once for each combination of planet & original species
-# THIS = country
-# FROM = species (Post Modification)
+# this = country
+# from = species (Post Modification)
 on_modification_complete = {
 	events = {
 		leader_species_traits.2
 	}
 }
 
-# executed when the ruler is ousted and goes back to their pre-ruler class
-# THIS = country
-# FROM = previous Ruler, already has the new class
+# fired when the ruler is ousted and goes back to their pre-ruler class
+# this = country
+# from = previous Ruler, already has the new class
 on_ruler_back_to_pre_ruler_class = {
 	events = {
 		leader_species_traits.3
 	}
 }
 
-# THIS = owner of fleet 1 (combatant)
-# FROM = owner of fleet 2 (destroyed)
-# FROMFROM = fleet 1
-# FROMFROMFROM = fleet 2
+# this = owner of fleet 1 (combatant)
+# from = owner of fleet 2 (destroyed)
+# fromfrom = fleet 1
+# fromfromfrom = fleet 2
 on_fleet_destroyed_perp = {
 	events = {
 		leader_species_traits.4
 	}
 }
 
-# Fires when my custom code changes a leader's species.  You might attach an event
+# Fired when my custom code changes a leader's species.  You might attach an event
 # here to handle custom traits in another mod that should be added or removed (or
 # converted) based on information about the leader (possibly taking in to account
 # things like their owner).
-# THIS = leader (post-modification)
+# this = leader (post-modification)
 on_leader_species_changed = {
 	events = {
 		leader_species_traits.5

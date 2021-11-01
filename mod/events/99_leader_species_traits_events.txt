@@ -29,7 +29,6 @@ country_event = {
 }
 
 # modifying a species applies all applicable traits and removes those no longer applicable
-# does not add randomized traits (i.e. latent psionics or brainslugs) but will remove them
 country_event = {
 	id = leader_species_traits.2
 	is_triggered_only = yes
@@ -97,7 +96,7 @@ country_event = {
 	}
 }
 
-# manually triggered above - unified approach to randomizing traits for new leaders
+# manually triggered above - unified approach to adjusting species-based traits for leaders
 # also triggered by custom on_action on_leader_species_changed
 leader_event = {
 	id = leader_species_traits.5
@@ -184,6 +183,44 @@ country_event = {
 				governor = { add_trait = leader_trait_governor_brainslug }
 				scientist = { add_trait = leader_trait_scientist_brainslug }
 				ruler = { add_trait = leader_trait_ruler_brainslug }
+			}
+		}
+	}
+}
+
+# triggered by on_single_player_save_game_load
+event = {
+	id = leader_species_traits.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = leader_species_traits_installed }
+	}
+	immediate = {
+		every_country = {
+			country_event = {
+				id = leader_species_traits.8
+			}
+		}
+	}
+}
+
+# adjust all owned/pool leaders
+# triggered by on_game_start_country and leader_species_traits.6
+country_event = {
+	id = leader_species_traits.8
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_leader = {
+			leader_event = {
+				id = leader_species_traits.5
+			}
+		}
+
+		every_pool_leader = {
+			leader_event = {
+				id = leader_species_traits.5
 			}
 		}
 	}

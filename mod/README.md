@@ -33,6 +33,7 @@ All other the new logic is implemented in standalone events and effects which sh
 Like leaders?  Try a couple of my other leader-related mods that work with this one.
 
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) will help your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
+* [Leader Traits: Synthetic Leader Traits for Machine Units](https://steamcommunity.com/sharedfiles/filedetails/?id=) will enable Machine Unit leaders to have the same special traits as Synthetic leaders
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) will help your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 * [[JP localize patch]Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2569179425) Japanese localisation by Dryus
@@ -74,6 +75,9 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
 * 2.0.0 Add handling for Clone Army admiral traits
 * 2.0.1 Fix issue where the Erudite leader trait was deleted from species that had a combo of Erudite plus one or more of Latent Psionic, Psionic, or Cybernetic when other species were modified
+* 2.1.0 Be more automagical
+    * Add events to adjust leader species-based traits when the game starts and also if the mod is added during gameplay
+    * Allow Machine Units to keep Synthetic leader traits if Leader Traits: Synthetic Leader Traits for Machine Units is also installed
 
 ## Source Code
 

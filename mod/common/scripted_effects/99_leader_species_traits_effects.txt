@@ -538,8 +538,19 @@ remove_leader_trait_psionic_or_latent_psionic = {
 
 remove_leader_trait_synthetic = {
 	if = {
-		limit = { species = { NOT = { has_trait = trait_mechanical } } }
-		# leaders are allowed to keep synthetic even if their owner ian't a synthetic empire or has synth leaders
+		limit = {
+			species = {
+				NOR = {
+					has_trait = trait_mechanical
+					# don't remove from machine units if the relevant mod is installed
+					AND = {
+						has_global_flag = machine_leader_synthetic_traits_installed
+						has_trait = trait_machine_unit
+					}
+				}
+			}
+		}
+		# leaders are allowed to keep synthetic even if their owner isn't a synthetic empire or doesn't have synth leaders
 		if = {
 			limit = { has_trait = leader_trait_admiral_synthetic }
 			remove_trait = leader_trait_admiral_synthetic
