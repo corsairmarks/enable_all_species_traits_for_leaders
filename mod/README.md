@@ -16,7 +16,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
 
 This mod overrides three default events related to adding leader traits: `distar.174` ,`utopia.2508` , and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.
 
@@ -72,12 +72,13 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 1.4.1 Minor bugfixes
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
-* 1.5.0 Mark as compatible for Stellaris 3.1.* "Lem" - no script changes
+* 1.5.0 Mark as compatible for Stellaris 3.1 "Lem" - no script changes
 * 2.0.0 Add handling for Clone Army admiral traits
 * 2.0.1 Fix issue where the Erudite leader trait was deleted from species that had a combo of Erudite plus one or more of Latent Psionic, Psionic, or Cybernetic when other species were modified
 * 2.1.0 Be more automagical
     * Add events to adjust leader species-based traits when the game starts and also if the mod is added during gameplay
     * Allow Machine Units to keep Synthetic leader traits if Leader Traits: Synthetic Leader Traits for Machine Units is also installed
+* 2.2.0 Mark as compatible for Stellaris 3.2 "Herbert" - no script changes
 
 ## Source Code
 
