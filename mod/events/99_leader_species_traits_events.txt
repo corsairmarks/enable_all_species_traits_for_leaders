@@ -84,8 +84,8 @@ country_event = {
 	trigger = {
 		has_active_event = { leader.1 }
 		exists = last_created_leader
-		is_same_value = last_created_leader.owner
 		last_created_leader = { leader_class = admiral }
+		is_country = last_created_leader.owner
 	}
 	immediate = {
 		last_created_leader = {
