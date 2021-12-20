@@ -79,6 +79,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Add events to adjust leader species-based traits when the game starts and also if the mod is added during gameplay
     * Allow Machine Units to keep Synthetic leader traits if Leader Traits: Synthetic Leader Traits for Machine Units is also installed
 * 2.2.0 Mark as compatible for Stellaris 3.2 "Herbert" - no script changes
+* 2.2.1 Fix Clone Soldier bug that didn't take into account leader class
 
 ## Source Code
 
