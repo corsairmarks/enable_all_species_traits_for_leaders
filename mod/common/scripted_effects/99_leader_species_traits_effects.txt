@@ -375,7 +375,10 @@ add_leader_trait_clone_army_fertile_admiral = {
 remove_leader_trait_clone_army_admiral = {
 	if = {
 		limit = {
-			species = { NOT = { has_trait = trait_clone_soldier_infertile } }
+			NAND = {
+				leader_class = admiral
+				species = { has_trait = trait_clone_soldier_infertile }
+			}
 			has_trait = leader_trait_clone_army_admiral
 		}
 		remove_trait = leader_trait_clone_army_admiral
@@ -385,7 +388,10 @@ remove_leader_trait_clone_army_admiral = {
 remove_leader_trait_clone_army_full_admiral = {
 	if = {
 		limit = {
-			species = { NOT = { has_trait = trait_clone_soldier_infertile_full_potential } }
+			NAND = {
+				leader_class = admiral
+				species = { has_trait = trait_clone_soldier_infertile_full_potential }
+			}
 			has_trait = leader_trait_clone_army_full_admiral
 		}
 		remove_trait = leader_trait_clone_army_full_admiral
@@ -395,7 +401,10 @@ remove_leader_trait_clone_army_full_admiral = {
 remove_leader_trait_clone_army_fertile_admiral = {
 	if = {
 		limit = {
-			species = { NOT = { has_trait = trait_clone_soldier_fertile } }
+			NAND = {
+				leader_class = admiral
+				species = { has_trait = trait_clone_soldier_fertile }
+			}
 			has_trait = leader_trait_clone_army_fertile_admiral
 		}
 		remove_trait = leader_trait_clone_army_fertile_admiral
