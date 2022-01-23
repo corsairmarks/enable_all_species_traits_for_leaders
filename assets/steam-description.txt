@@ -1,5 +1,4 @@
 [h1]Overview[/h1]
-
 This mod ensures that your leaders can have every species-based leader trait that their species makes them eligible for.  Somehow managed to get a Psionic, Erudite, Cybernetic, Brainslugged species?  Now your leaders can have all of the traits together!
 
 Like the default game, this mod does [b]not[/b] guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).  The game includes an event for leaders of a Latent Psionic species randomly gaining the Psionic leader trait, but it was limited to the main species of an empire.  That has been altered so any Latent Psionic leaders have a chance to randomly manifest Psionic abilities.  Additionally, an event functionally similar has been added for leaders from a species with Brain Slugs to gain the Brain Slug trait.
@@ -7,7 +6,6 @@ Like the default game, this mod does [b]not[/b] guarantee psionic traits for Lat
 New for 3.1: handle the Clone Army origin's special admiral traits.
 
 [h1]Changes[/h1]
-
 This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([b]on_leader_spawned[/b]), when a species is modified ([b]on_modification_complete[/b] - including a one-time, independent chance for latent psionics or brainslugs), or when a ruler returns to their previous leader job ([b]on_ruler_back_to_pre_ruler_class[/b] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
 
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?"  So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
@@ -15,8 +13,7 @@ The same code is used in each of these three cases (via effects) that do not enf
 The original inspiration for me to create this mod was the "Promising Officer" event which rewards admirals with two traits, but none of their appropriate species traits.  This seems to occur because the built-in effect to spawn a leader [b]create_leader[/b] completely overwrites any species traits whenever [b]traits = { }[/b] are specified (as in this event [b]leader.1[/b]).  Currently, this mod only addresses this one instance, but if you find another place that would benefit from an event-created leader having their species traits added, please leave a comment describing which event.
 
 [h2]Compatibility[/h2]
-
-Built for Stellaris version 3.2.* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3.* "Libra."  Not compatible with achievements.
 
 This mod overrides three default events related to adding leader traits: [b]distar.174[/b] ,[b]utopia.2508[/b] , and [b]utopia.2605[/b].  Other mods that make changes to any of the same events will conflict with this one.
 
@@ -29,9 +26,7 @@ For [b]distar.174[/b], the easiest way to resolve the conflict is to comment out
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
 [h3]Recommended Companion Mods[/h3]
-
 Like leaders?  Try a couple of my other leader-related mods that work with this one.
-
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] will help your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2642820468]Leader Traits: Synthetic Leader Traits for Machine Units[/url] will enable Machine Unit leaders to have the same special traits as Synthetic leaders
@@ -39,27 +34,21 @@ Like leaders?  Try a couple of my other leader-related mods that work with this 
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] will let you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
-
 [h3]When to Install[/h3]
-
 This mod can be safely added or removed from your save game after the game has started.  It is implemented through custom events and effects without adding gameplay objects.  If you remove it, your game will work normally.
+
 [h2]Known Issues[/h2]
-
 Overriding events and effects from the default game causes error logs.  Expect to see four lines similar to this in error.log:
-
 [code]
 [17:49:29][game_singleobjectdatabase.h:147]: Object with key: remove_leader_traits_after_modification already exists
 [17:49:29][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5417
 [17:49:29][eventmanager.cpp:355]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 579
 [17:49:29][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1492
 [/code]
-
 [h2]Changelog[/h2]
-
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2499031295]Change Notes[/url]
 
 [h2]Source Code[/h2]
-
 Hosted on [url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]GitHub[/url]
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]

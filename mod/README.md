@@ -16,7 +16,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3.\* "Libra."  Not compatible with achievements.
 
 This mod overrides three default events related to adding leader traits: `distar.174` ,`utopia.2508` , and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.
 
@@ -80,6 +80,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Allow Machine Units to keep Synthetic leader traits if Leader Traits: Synthetic Leader Traits for Machine Units is also installed
 * 2.2.0 Mark as compatible for Stellaris 3.2 "Herbert" - no script changes
 * 2.2.1 Fix Clone Soldier bug that didn't take into account leader class
+* 2.3.0 Mark as compatible for Stellaris 3.3 "Libra" - no script changes
 
 ## Source Code
 
