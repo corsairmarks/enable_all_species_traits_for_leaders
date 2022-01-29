@@ -16,7 +16,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.3.\* "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 This mod overrides three default events related to adding leader traits: `distar.174` ,`utopia.2508` , and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.
 
@@ -47,10 +47,10 @@ This mod can be safely added or removed from your savegame after the game has st
 Overriding events and effects from the default game causes error logs.  Expect to see four lines similar to this in error.log:
 
 ```
-[17:49:29][game_singleobjectdatabase.h:147]: Object with key: remove_leader_traits_after_modification already exists
-[17:49:29][eventmanager.cpp:355]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5417
-[17:49:29][eventmanager.cpp:355]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 579
-[17:49:29][eventmanager.cpp:355]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1492
+[15:38:58][game_singleobjectdatabase.h:147]: Object with key: remove_leader_traits_after_modification already exists, using the one at  file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
+[15:38:59][eventmanager.cpp:361]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5434
+[15:39:00][eventmanager.cpp:361]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 579
+[15:39:00][eventmanager.cpp:361]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1493
 ```
 
 ## Changelog
