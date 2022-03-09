@@ -4,7 +4,7 @@ This mod ensures that your leaders can have every species-based leader trait tha
 
 Like the default game, this mod does **not** guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).  The game includes an event for leaders of a Latent Psionic species randomly gaining the Psionic leader trait, but it was limited to the main species of an empire.  That has been altered so any Latent Psionic leaders have a chance to randomly manifest Psionic abilities.  Additionally, an event functionally similar has been added for leaders from a species with Brain Slugs to gain the Brain Slug trait.
 
-New for 3.1: handle the Clone Army origin's special admiral traits.
+New for 3.3: governors whose species have the "Numistic Administration" trait gain the "Merchant of Numa" leader trait.
 
 # Changes
 
@@ -81,6 +81,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 2.2.0 Mark as compatible for Stellaris 3.2 "Herbert" - no script changes
 * 2.2.1 Fix Clone Soldier bug that didn't take into account leader class
 * 2.3.0 Mark as compatible for Stellaris 3.3 "Libra" - no script changes
+* 2.4.0 Leaders from species with the "Numistic Administration" trait gain the "Merchant of Numa" leader trait
 
 ## Source Code
 

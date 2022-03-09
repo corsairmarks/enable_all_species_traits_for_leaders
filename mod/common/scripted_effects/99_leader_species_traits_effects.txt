@@ -339,6 +339,17 @@ add_leader_trait_synthetic = {
 	}
 }
 
+add_leader_trait_nuumismatic_administration_governor = {
+	if = {
+		limit = {
+			leader_class = governor
+			species = { has_trait = trait_nuumismatic_administration }
+			NOT = { has_trait = leader_trait_nuumismatic_priest }
+		}
+		add_trait = leader_trait_nuumismatic_priest
+	}
+}
+
 add_leader_trait_clone_army_admiral = {
 	if = {
 		limit = {
@@ -587,6 +598,19 @@ remove_leader_trait_synthetic = {
 	}
 }
 
+remove_leader_trait_nuumismatic_administration_governor = {
+	if = {
+		limit = {
+			NAND = {
+				leader_class = governor
+				species = { has_trait = trait_nuumismatic_administration }
+			}
+			has_trait = leader_trait_nuumismatic_priest
+		}
+		remove_trait = leader_trait_nuumismatic_priest
+	}
+}
+
 add_all_applicable_leader_species_traits = {
 	add_static_applicable_leader_species_traits = yes
 	add_randomized_applicable_leader_species_traits = yes
@@ -597,6 +621,7 @@ add_static_applicable_leader_species_traits = {
 	add_leader_trait_erudite = yes
 	add_leader_trait_psionic = yes
 	add_leader_trait_synthetic = yes
+	add_leader_trait_nuumismatic_administration_governor = yes
 	add_leader_trait_clone_army_admiral = yes
 	add_leader_trait_clone_army_full_admiral = yes
 	add_leader_trait_clone_army_fertile_admiral = yes
@@ -638,6 +663,7 @@ remove_all_inapplicable_leader_species_traits = {
 	remove_leader_trait_erudite = yes
 	remove_leader_trait_psionic_or_latent_psionic = yes
 	remove_leader_trait_synthetic = yes
+	remove_leader_trait_nuumismatic_administration_governor = yes
 	remove_leader_trait_clone_army_admiral = yes
 	remove_leader_trait_clone_army_full_admiral = yes
 	remove_leader_trait_clone_army_fertile_admiral = yes
