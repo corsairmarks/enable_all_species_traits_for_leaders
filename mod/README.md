@@ -30,7 +30,7 @@ All other the new logic is implemented in standalone events and effects which sh
 
 ### Recommended Companion Mods
 
-Like leaders?  Try a couple of my other leader-related mods that work with this one.
+Like leaders?  Try some of my other leader-related mods that work with this one.
 
 * [Leader Traits: Merge-Add Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2784224276) re-enables combining species traits like Cybernetic and Psionic via applying species templates, so that it is easier to create a superspecies with multiple leader-beneficial species traits
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) helps your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology

@@ -26,7 +26,7 @@ For [b]distar.174[/b], the easiest way to resolve the conflict is to comment out
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
 [h3]Recommended Companion Mods[/h3]
-Like leaders?  Try a couple of my other leader-related mods that work with this one.
+Like leaders?  Try some of my other leader-related mods that work with this one.
 [list]
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2784224276]Leader Traits: Merge-Add Species Traits[/url] re-enables combining species traits like Cybernetic and Psionic via applying species templates, so that it is easier to create a superspecies with multiple leader-beneficial species traits
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] helps your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
