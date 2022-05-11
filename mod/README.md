@@ -83,7 +83,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 2.2.1 Fix Clone Soldier bug that didn't take into account leader class
 * 2.3.0 Mark as compatible for Stellaris 3.3 "Libra" - no script changes
 * 2.4.0 Governors from species with the "Numistic Administration" trait gain the "Merchant of Numa" leader trait
-* 2.3.0 Mark as compatible for Stellaris 3.4 "Cepheus" - no script changes
+* 3.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for effects
 
 ## Source Code
 

@@ -1,4 +1,5 @@
 add_leader_trait_brainslug = {
+	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_brainslug } }
 		if = {
@@ -44,6 +45,7 @@ add_leader_trait_brainslug = {
 }
 
 add_leader_trait_cyborg = {
+	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_cybernetic } }
 		if = {
@@ -89,6 +91,7 @@ add_leader_trait_cyborg = {
 }
 
 add_leader_trait_erudite = {
+	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_erudite } }
 		if = {
@@ -134,6 +137,7 @@ add_leader_trait_erudite = {
 }
 
 add_leader_trait_latent_psionic = {
+	optimize_memory
 	if = {
 		limit = {
 			species = {
@@ -184,6 +188,7 @@ add_leader_trait_latent_psionic = {
 }
 
 add_leader_trait_psionic = {
+	optimize_memory
 	if = {
 		limit = {
 			species = {
@@ -241,6 +246,7 @@ add_leader_trait_psionic = {
 }
 
 add_leader_trait_chosen = {
+	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_psionic } }
 		if = {
@@ -286,6 +292,7 @@ add_leader_trait_chosen = {
 }
 
 add_leader_trait_synthetic = {
+	optimize_memory
 	if = {
 		limit = {
 			species = { has_trait = trait_mechanical }
@@ -339,6 +346,7 @@ add_leader_trait_synthetic = {
 }
 
 add_leader_trait_nuumismatic_administration_governor = {
+	optimize_memory
 	if = {
 		limit = {
 			leader_class = governor
@@ -350,6 +358,7 @@ add_leader_trait_nuumismatic_administration_governor = {
 }
 
 add_leader_trait_clone_army_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			leader_class = admiral
@@ -361,6 +370,7 @@ add_leader_trait_clone_army_admiral = {
 }
 
 add_leader_trait_clone_army_full_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			leader_class = admiral
@@ -372,6 +382,7 @@ add_leader_trait_clone_army_full_admiral = {
 }
 
 add_leader_trait_clone_army_fertile_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			leader_class = admiral
@@ -383,6 +394,7 @@ add_leader_trait_clone_army_fertile_admiral = {
 }
 
 remove_leader_trait_clone_army_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			NAND = {
@@ -396,6 +408,7 @@ remove_leader_trait_clone_army_admiral = {
 }
 
 remove_leader_trait_clone_army_full_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			NAND = {
@@ -409,6 +422,7 @@ remove_leader_trait_clone_army_full_admiral = {
 }
 
 remove_leader_trait_clone_army_fertile_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			NAND = {
@@ -422,6 +436,7 @@ remove_leader_trait_clone_army_fertile_admiral = {
 }
 
 remove_leader_trait_brainslug = {
+	optimize_memory
 	if = {
 		limit = { species = { NOT = { has_trait = trait_brainslug } } }
 		if = {
@@ -452,6 +467,7 @@ remove_leader_trait_brainslug = {
 }
 
 remove_leader_trait_cyborg = {
+	optimize_memory
 	if = {
 		limit = { species = { NOT = { has_trait = trait_cybernetic } } }
 		if = {
@@ -482,6 +498,7 @@ remove_leader_trait_cyborg = {
 }
 
 remove_leader_trait_erudite = {
+	optimize_memory
 	if = {
 		limit = { species = { NOT = { has_trait = trait_erudite } } }
 		if = {
@@ -512,6 +529,7 @@ remove_leader_trait_erudite = {
 }
 
 remove_leader_trait_psionic_or_latent_psionic = {
+	optimize_memory
 	if = {
 		limit = {
 			species = {
@@ -556,6 +574,7 @@ remove_leader_trait_psionic_or_latent_psionic = {
 }
 
 remove_leader_trait_synthetic = {
+	optimize_memory
 	if = {
 		limit = {
 			species = {
@@ -598,6 +617,7 @@ remove_leader_trait_synthetic = {
 }
 
 remove_leader_trait_nuumismatic_administration_governor = {
+	optimize_memory
 	if = {
 		limit = {
 			NAND = {
@@ -611,11 +631,13 @@ remove_leader_trait_nuumismatic_administration_governor = {
 }
 
 add_all_applicable_leader_species_traits = {
+	optimize_memory
 	add_static_applicable_leader_species_traits = yes
 	add_randomized_applicable_leader_species_traits = yes
 }
 
 add_static_applicable_leader_species_traits = {
+	optimize_memory
 	add_leader_trait_cyborg = yes
 	add_leader_trait_erudite = yes
 	add_leader_trait_psionic = yes
@@ -632,6 +654,7 @@ add_static_applicable_leader_species_traits = {
 # the leader has not already rolled (determined by a flag). More fair because existing leaders now get a 1-time
 # chance to gain the appropriate trait if their species has it.
 add_randomized_applicable_leader_species_traits = {
+	optimize_memory
 	if = {
 		limit = {
 			species = { has_trait = trait_brainslug }
@@ -657,6 +680,7 @@ add_randomized_applicable_leader_species_traits = {
 }
 
 remove_all_inapplicable_leader_species_traits = {
+	optimize_memory
 	remove_leader_trait_brainslug = yes
 	remove_leader_trait_cyborg = yes
 	remove_leader_trait_erudite = yes
