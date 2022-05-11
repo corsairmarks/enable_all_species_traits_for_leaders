@@ -1,4 +1,3 @@
-
 add_leader_trait_brainslug = {
 	if = {
 		limit = { species = { has_trait = trait_brainslug } }
