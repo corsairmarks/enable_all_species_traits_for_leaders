@@ -3,7 +3,7 @@ This mod ensures that your leaders can have every species-based leader trait tha
 
 Like the default game, this mod does [b]not[/b] guarantee psionic traits for Latent Psionics (instead there is a 20% chance for each leader) or brain slugs (again, 20% chance for each leader).  The game includes an event for leaders of a Latent Psionic species randomly gaining the Psionic leader trait, but it was limited to the main species of an empire.  That has been altered so any Latent Psionic leaders have a chance to randomly manifest Psionic abilities.  Additionally, an event functionally similar has been added for leaders from a species with Brain Slugs to gain the Brain Slug trait.
 
-New for 3.3: governors whose species have the "Numistic Administration" trait gain the "Merchant of Numa" leader trait.
+Governors whose species has the "Numistic Administration" trait gain the "Merchant of Numa" leader trait.
 
 [h1]Changes[/h1]
 This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned ([b]on_leader_spawned[/b]), when a species is modified ([b]on_modification_complete[/b] - including a one-time, independent chance for latent psionics or brainslugs), or when a ruler returns to their previous leader job ([b]on_ruler_back_to_pre_ruler_class[/b] - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
@@ -13,7 +13,7 @@ The same code is used in each of these three cases (via effects) that do not enf
 The original inspiration for me to create this mod was the "Promising Officer" event which rewards admirals with two traits, but none of their appropriate species traits.  This seems to occur because the built-in effect to spawn a leader [b]create_leader[/b] completely overwrites any species traits whenever [b]traits = { }[/b] are specified (as in this event [b]leader.1[/b]).  Currently, this mod only addresses this one instance, but if you find another place that would benefit from an event-created leader having their species traits added, please leave a comment describing which event.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 This mod overrides three default events related to adding leader traits: [b]distar.174[/b] ,[b]utopia.2508[/b] , and [b]utopia.2605[/b].  Other mods that make changes to any of the same events will conflict with this one.
 
