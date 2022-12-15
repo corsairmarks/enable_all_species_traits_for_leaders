@@ -91,7 +91,6 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		has_country_flag = finished_brainslug_chain
 		exists = from
 	}
 	immediate = {
