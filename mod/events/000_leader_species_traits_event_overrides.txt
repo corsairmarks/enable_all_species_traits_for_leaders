@@ -75,13 +75,19 @@ country_event = {
 # 	immediate = { }
 # }
 
-# # override the default on_leader_spawned brainslug event
-# country_event = {
-# 	id = distar.173
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
+# override the default on_leader_spawned brainslug event
+country_event = {
+	id = distar.173
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_country_flag = finished_brainslug_chain
+		exists = from
+	}
+	immediate = {
+		from = { roll_for_brainslug_trait = yes }
+	}
+}
 
 # override the default brainslug event for leader pool (triggered explicitly a couple spots in the Distant Stars events file)
 country_event = {
@@ -89,12 +95,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		every_pool_leader = {
-			random_list = {
-				80 = { }
-				20 = { add_leader_trait_brainslug = yes }
-			}
-		}
+		every_pool_leader = { roll_for_brainslug_trait = yes }
 	}
 }
 

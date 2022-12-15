@@ -117,8 +117,16 @@ country_event = {
 	show_sound = event_alien_nature
 
 	trigger = {
+		# intentionally allows leaders to be chosen regardless of whether they previously rolled on having a brainslug
 		any_owned_leader = {
-			species = { has_trait = trait_brainslug }
+			OR = {
+				species = { has_trait = trait_brainslug }
+				# as per the original events, countries with the project complete can have slugs on any leader
+				AND = {
+					owner = { has_country_flag = finished_brainslug_chain }
+					is_robotic_species = no
+				}
+			}
 			NOR = {
 				has_trait = leader_trait_admiral_brainslug
 				has_trait = leader_trait_general_brainslug
@@ -145,7 +153,13 @@ country_event = {
 	immediate = {
 		random_owned_leader = {
 			limit = {
-				species = { has_trait = trait_brainslug }
+				OR = {
+					species = { has_trait = trait_brainslug }
+					AND = {
+						owner = { has_country_flag = finished_brainslug_chain }
+						is_robotic_species = no
+					}
+				}
 				NOR = {
 					has_trait = leader_trait_admiral_brainslug
 					has_trait = leader_trait_general_brainslug
@@ -161,6 +175,13 @@ country_event = {
 							is_pop_faction_type = supremacist
 						}
 					}
+				}
+			}
+			weights = {
+				base = 1
+				modifier = {
+					factor = 2
+					species = { has_trait = trait_brainslug }
 				}
 			}
 			save_event_target_as = brainslugged_leader
