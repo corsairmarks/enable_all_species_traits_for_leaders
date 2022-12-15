@@ -51,13 +51,17 @@ country_event = {
 # 	immediate = { }
 # }
 
-# # override the default on_leader_spawned latent psionic event
-# country_event = {
-# 	id = utopia.2601
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
+# override the default on_leader_spawned latent psionic event
+country_event = {
+	id = utopia.2601
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		# this event is already gated behind a 20% random_events = { }
+		add_leader_trait_latent_psionic = yes
+		set_leader_flag = leader_trait_latent_psionic_chance
+	}
+}
 
 # # override the default on_leader_spawned psionic event
 # country_event = {
@@ -121,7 +125,12 @@ country_event = {
 				has_trait = leader_trait_governor_chosen
 				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_ruler_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
+				has_trait = leader_trait_ruler_composer_chosen
+				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_whisperers_chosen
 			}
+			has_chosen_covenant_trait_non_ruler = no
 		}
 	}
 
@@ -144,7 +153,12 @@ country_event = {
 					has_trait = leader_trait_governor_chosen
 					has_trait = leader_trait_scientist_chosen
 					has_trait = leader_trait_ruler_chosen
+					has_trait = leader_trait_ruler_instrument_chosen
+					has_trait = leader_trait_ruler_composer_chosen
+					has_trait = leader_trait_ruler_eater_chosen
+					has_trait = leader_trait_ruler_whisperers_chosen
 				}
+				has_chosen_covenant_trait_non_ruler = no
 			}
 			save_event_target_as = psionic_leader
 		}
