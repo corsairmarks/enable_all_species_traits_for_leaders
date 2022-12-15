@@ -128,63 +128,12 @@ add_leader_trait_erudite = {
 	}
 }
 
-add_leader_trait_latent_psionic = {
-	optimize_memory
-	if = {
-		limit = {
-			species = {
-				has_trait = trait_latent_psionic
-				NOT = { has_trait = trait_psionic }
-			}
-		}
-		switch = {
-			trigger = leader_class
-			admiral = {
-				if = {
-					limit = { NOT = { has_trait = leader_trait_admiral_psionic } }
-					add_trait = leader_trait_admiral_psionic
-				}
-			}
-			general = {
-				if = {
-					limit = { NOT = { has_trait = leader_trait_general_psionic } }
-					add_trait = leader_trait_general_psionic
-				}
-			}
-			governor = {
-				if = {
-					limit = { NOT = { has_trait = leader_trait_governor_psionic } }
-					add_trait = leader_trait_governor_psionic
-				}
-			}
-			scientist = {
-				if = {
-					limit = { NOT = { has_trait = leader_trait_scientist_psionic } }
-					add_trait = leader_trait_scientist_psionic
-				}
-			}
-			ruler = {
-				if = {
-					limit = { NOT = { has_trait = leader_trait_ruler_psionic } }
-					add_trait = leader_trait_ruler_psionic
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
-			add_ruler_trait = leader_trait_ruler_psionic
-		}
-	}
-}
-
+# wrap with a conditional if necessary to distinguish between psionic and latent psionic leaders
 add_leader_trait_psionic = {
 	optimize_memory
 	if = {
 		limit = {
-			species = {
-				NOT = { has_trait = trait_latent_psionic }
-				has_trait = trait_psionic
-			}
+			species = { has_psionic_species_trait = yes }
 			NOR = {
 				has_trait = leader_trait_admiral_chosen
 				has_trait = leader_trait_general_chosen
@@ -475,17 +424,10 @@ remove_leader_trait_erudite = {
 	}
 }
 
-remove_leader_trait_psionic_or_latent_psionic = {
+remove_leader_trait_psionic = {
 	optimize_memory
 	if = {
-		limit = {
-			species = {
-				NOR = {
-					has_trait = trait_latent_psionic
-					has_trait = trait_psionic
-				}
-			}
-		}
+		limit = { species = { has_psionic_species_trait = no } }
 		if = {
 			limit = { has_trait = leader_trait_admiral_psionic }
 			remove_trait = leader_trait_admiral_psionic
@@ -774,8 +716,8 @@ adjust_psionic_chosen_traits = {
 			OR = {
 				has_trait = leader_trait_governor_chosen
 				has_trait = leader_trait_governor_composer_chosen
-				has_trait = leader_trait_governor_instrument_chosen
 				has_trait = leader_trait_governor_eater_chosen
+				has_trait = leader_trait_governor_instrument_chosen
 			}
 		}
 		remove_trait = leader_trait_governor_psionic
@@ -876,7 +818,10 @@ add_static_applicable_leader_species_traits = {
 	optimize_memory
 	add_leader_trait_cyborg = yes
 	add_leader_trait_erudite = yes
-	add_leader_trait_psionic = yes
+	if = {
+		limit = { species = { has_trait = trait_psionic } }
+		add_leader_trait_psionic = yes
+	}
 	add_leader_trait_synthetic = yes
 	add_leader_trait_nuumismatic_administration_governor = yes
 	add_leader_trait_clone_army_admiral = yes
@@ -934,7 +879,7 @@ roll_for_latent_psionic_trait = {
 		}
 		random_list = {
 			80 = { }
-			20 = { add_leader_trait_latent_psionic = yes }
+			20 = { add_leader_trait_psionic = yes }
 		}
 		set_leader_flag = leader_trait_latent_psionic_chance
 	}
@@ -945,7 +890,7 @@ remove_all_inapplicable_leader_species_traits = {
 	# remove_leader_trait_brainslug = yes # leaders are allowed to keep this trait regardless of species trait
 	remove_leader_trait_cyborg = yes
 	remove_leader_trait_erudite = yes
-	remove_leader_trait_psionic_or_latent_psionic = yes
+	remove_leader_trait_psionic = yes
 	remove_leader_trait_synthetic = yes
 	remove_leader_trait_nuumismatic_administration_governor = yes
 	remove_leader_trait_clone_army_admiral = yes

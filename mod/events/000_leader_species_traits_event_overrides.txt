@@ -63,7 +63,7 @@ country_event = {
 	immediate = {
 		# this event is already gated behind a 20% random_events = { }
 		from = {
-			add_leader_trait_latent_psionic = yes
+			add_leader_trait_psionic = yes
 			set_leader_flag = leader_trait_latent_psionic_chance
 		}
 	}

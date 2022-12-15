@@ -64,7 +64,7 @@ country_event = {
 			}
 			if = {
 				limit = { has_ruler_trait = leader_trait_ruler_psionic }
-				add_leader_trait_latent_psionic = yes
+				add_leader_trait_psionic = yes
 			}
 			remove_all_inapplicable_leader_species_traits = yes
 			adjust_psionic_chosen_traits = yes
