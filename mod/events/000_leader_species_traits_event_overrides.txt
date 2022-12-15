@@ -130,9 +130,9 @@ country_event = {
 				has_trait = leader_trait_governor_chosen
 				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_ruler_chosen
-				has_trait = leader_trait_ruler_instrument_chosen
 				has_trait = leader_trait_ruler_composer_chosen
 				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
 				has_trait = leader_trait_ruler_whisperers_chosen
 			}
 			has_chosen_covenant_trait_non_ruler = no
@@ -158,9 +158,9 @@ country_event = {
 					has_trait = leader_trait_governor_chosen
 					has_trait = leader_trait_scientist_chosen
 					has_trait = leader_trait_ruler_chosen
-					has_trait = leader_trait_ruler_instrument_chosen
 					has_trait = leader_trait_ruler_composer_chosen
 					has_trait = leader_trait_ruler_eater_chosen
+					has_trait = leader_trait_ruler_instrument_chosen
 					has_trait = leader_trait_ruler_whisperers_chosen
 				}
 				has_chosen_covenant_trait_non_ruler = no

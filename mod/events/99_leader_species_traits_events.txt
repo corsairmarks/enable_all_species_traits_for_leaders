@@ -50,7 +50,7 @@ country_event = {
 	}
 }
 
-# demoted rulers should always keep their brainslug/psionic traits if their species has the right trait
+# demoted rulers should always keep their brainslug/latent psionic traits if their species has the right trait
 country_event = {
 	id = leader_species_traits.3
 	hide_window = yes
@@ -71,6 +71,7 @@ country_event = {
 				add_leader_trait_chosen = yes
 			}
 			remove_all_inapplicable_leader_species_traits = yes
+			adjust_psionic_chosen_traits = yes
 		}
 	}
 }
@@ -105,6 +106,7 @@ leader_event = {
 	immediate = {
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
+		adjust_psionic_chosen_traits = yes
 	}
 }
 

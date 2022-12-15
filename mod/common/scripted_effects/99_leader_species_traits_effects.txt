@@ -194,12 +194,17 @@ add_leader_trait_psionic = {
 				has_trait = trait_psionic
 			}
 			NOR = {
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_admiral_chosen
 				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_ruler_chosen
+				has_trait = leader_trait_ruler_composer_chosen
+				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
+				has_trait = leader_trait_ruler_whisperers_chosen
 			}
+			has_chosen_covenant_trait_non_ruler = no
 		}
 		if = {
 			limit = {
@@ -538,13 +543,6 @@ remove_leader_trait_psionic_or_latent_psionic = {
 					has_trait = trait_psionic
 				}
 			}
-			OR = {
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen
-				has_trait = leader_trait_admiral_chosen
-				has_trait = leader_trait_general_chosen
-				has_trait = leader_trait_ruler_chosen
-			}
 		}
 		if = {
 			limit = { has_trait = leader_trait_admiral_psionic }
@@ -570,6 +568,313 @@ remove_leader_trait_psionic_or_latent_psionic = {
 			limit = { has_ruler_trait = leader_trait_ruler_psionic }
 			remove_ruler_trait = leader_trait_ruler_psionic
 		}
+	}
+}
+
+adjust_psionic_chosen_traits = {
+	# ensure chosen traits apply to both the ruler and regular class of a leader
+	if = {
+		limit = {
+			NOT = { has_ruler_trait = leader_trait_ruler_chosen }
+			OR = {
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
+			}
+		}
+		add_ruler_trait = leader_trait_ruler_chosen
+	}
+	switch = {
+		trigger = leader_class
+		admiral = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_admiral_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_admiral_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_admiral_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_admiral_chosen }
+				}
+				add_trait = leader_trait_admiral_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_admiral_eater_chosen }
+				}
+				add_trait = leader_trait_admiral_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_admiral_instrument_chosen }
+				}
+				add_trait = leader_trait_admiral_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_admiral_whisperers_chosen }
+				}
+				add_trait = leader_trait_admiral_whisperers_chosen
+			}
+		}
+		general = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_general_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_general_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_general_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_general_chosen }
+				}
+				add_trait = leader_trait_general_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_general_composer_chosen }
+				}
+				add_trait = leader_trait_general_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_general_eater_chosen }
+				}
+				add_trait = leader_trait_general_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_general_whisperers_chosen }
+				}
+				add_trait = leader_trait_general_whisperers_chosen
+			}
+		}
+		governor = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_governor_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_governor_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_governor_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_governor_chosen }
+				}
+				add_trait = leader_trait_governor_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_governor_composer_chosen }
+				}
+				add_trait = leader_trait_governor_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_governor_eater_chosen }
+				}
+				add_trait = leader_trait_governor_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_governor_instrument_chosen }
+				}
+				add_trait = leader_trait_governor_instrument_chosen
+			}
+		}
+		scientist = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_scientist_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_scientist_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_scientist_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_scientist_chosen }
+				}
+				add_trait = leader_trait_scientist_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_scientist_composer_chosen }
+				}
+				add_trait = leader_trait_scientist_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_scientist_instrument_chosen }
+				}
+				add_trait = leader_trait_scientist_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_scientist_whisperers_chosen }
+				}
+				add_trait = leader_trait_scientist_whisperers_chosen
+			}
+		}
+	}
+
+	# remove extra basic psionic traits if the leader has a chosen trait (note that generic chosen and patron-specific chosen can stack)
+	if = {
+		limit = {
+			has_trait = leader_trait_admiral_psionic
+			OR = {
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_admiral_eater_chosen
+				has_trait = leader_trait_admiral_instrument_chosen
+				has_trait = leader_trait_admiral_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_admiral_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_general_psionic
+			OR = {
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_general_composer_chosen
+				has_trait = leader_trait_general_eater_chosen
+				has_trait = leader_trait_general_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_general_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_governor_psionic
+			OR = {
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_governor_composer_chosen
+				has_trait = leader_trait_governor_instrument_chosen
+				has_trait = leader_trait_governor_eater_chosen
+			}
+		}
+		remove_trait = leader_trait_governor_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_scientist_psionic
+			OR = {
+				has_trait = leader_trait_scientist_chosen
+				has_trait = leader_trait_scientist_composer_chosen
+				has_trait = leader_trait_scientist_instrument_chosen
+				has_trait = leader_trait_scientist_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_scientist_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_ruler_psionic
+			OR = {
+				has_trait = leader_trait_ruler_chosen
+				has_trait = leader_trait_ruler_composer_chosen
+				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
+				has_trait = leader_trait_ruler_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_ruler_psionic
+	}
+	if = {
+		limit = {
+			has_ruler_trait = leader_trait_ruler_psionic
+			OR = {
+				has_ruler_trait = leader_trait_ruler_chosen
+				has_ruler_trait = leader_trait_ruler_composer_chosen
+				has_ruler_trait = leader_trait_ruler_eater_chosen
+				has_ruler_trait = leader_trait_ruler_instrument_chosen
+				has_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+		}
+		remove_ruler_trait = leader_trait_ruler_psionic
 	}
 }
 
