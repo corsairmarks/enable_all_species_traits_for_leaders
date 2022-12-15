@@ -248,52 +248,6 @@ add_leader_trait_psionic = {
 	}
 }
 
-add_leader_trait_chosen = {
-	optimize_memory
-	if = {
-		limit = { species = { has_trait = trait_psionic } }
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_chosen }
-			}
-			add_trait = leader_trait_admiral_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_chosen }
-			}
-			add_trait = leader_trait_general_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_chosen }
-			}
-			add_trait = leader_trait_governor_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_chosen }
-			}
-			add_trait = leader_trait_scientist_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_chosen }
-			}
-			add_trait = leader_trait_ruler_chosen
-		}
-		if = {
-			limit = { NOT = { has_ruler_trait = leader_trait_ruler_chosen } }
-			add_ruler_trait = leader_trait_ruler_chosen
-		}
-	}
-}
-
 add_leader_trait_synthetic = {
 	optimize_memory
 	if = {
