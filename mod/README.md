@@ -16,15 +16,14 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
-This mod overrides three default events related to adding leader traits: `distar.174` ,`utopia.2508` , and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.
+This mod overrides five default events related to adding leader traits: `distar.173`, `distar.174` ,`utopia.2508`, `utopia.2601`, and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.  For this mod, these events are stored in the file `events/000_leader_species_traits_event_overrides.txt`.
 
-For `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event from this mod, which is in the file `events/000_overridden_leader_species_trait_events.txt`.  The override is just a cleaner way to add the initial brainslug trait for hireable leaders - the original in-game code will execute in the two places it could be triggered but they have a very low impact.
-
-`utopia.2508` is the default event for adding or removing Erudite leader traits.  That event uses the effect `remove_leader_traits_after_modification` which is also overridden.  If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that _any_ species in your empire is modified.
-
-`utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species.  I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
+1. For `distar.173` and/or `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event(s) from this mod.  The overrides are just a cleaner way to add the initial brainslug trait for hireable leaders. If removed or disabled, the original in-game code will execute instead but it has a very low impact.
+2. `utopia.2508` is the default event for adding or removing Erudite leader traits.  That event uses the effect `remove_leader_traits_after_modification` which is also overridden.  If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that _any_ species in your empire is modified.
+3. `utopia.2601` ensures that newly-spawned latent psionic leaders are flagged as having already rolled for a chance at a psionic trait. If removed or disabled, the flag won't be set so some latent psionic leaders may be able to get a second chance at randomly rolling a psionic trait.
+4. `utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species.  I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
 
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
@@ -34,7 +33,6 @@ Like leaders?  Try some of my other leader-related mods that work with this one.
 
 * [Leader Traits: Merge-Add Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2784224276) re-enables combining species traits like Cybernetic and Psionic via applying species templates, so that it is easier to create a superspecies with multiple leader-beneficial species traits
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) helps your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
-* [Leader Traits: Synthetic Leader Traits for Machine Units](https://steamcommunity.com/workshop/filedetails/?id=2642820468) enables Machine Unit leaders to have the same special traits as Synthetic leaders
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) helps your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) lets you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 * [[JP localize patch]Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2569179425) Japanese localisation by Dryus
@@ -45,13 +43,15 @@ This mod can be safely added or removed from your savegame after the game has st
 
 ## Known Issues
 
-Overriding events and effects from the default game causes error logs.  Expect to see four lines similar to this in error.log:
+Overriding events and effects from the default game causes error logs.  Expect to see six lines similar to this in error.log:
 
 ```
-[15:38:58][game_singleobjectdatabase.h:147]: Object with key: remove_leader_traits_after_modification already exists, using the one at  file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
-[15:38:59][eventmanager.cpp:361]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5434
-[15:39:00][eventmanager.cpp:361]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 579
-[15:39:00][eventmanager.cpp:361]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1493
+[02:47:29][game_singleobjectdatabase.h:165]: Object with key: remove_leader_traits_after_modification already exists, using the one at  file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
+[02:47:31][eventmanager.cpp:368]: an event with id [distar.173] already exists!  file: events/distant_stars_events_1.txt line: 5288
+[02:47:31][eventmanager.cpp:368]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5427
+[02:47:31][eventmanager.cpp:368]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 619
+[02:47:31][eventmanager.cpp:368]: an event with id [utopia.2601] already exists!  file: events/utopia_on_action_events.txt line: 1460
+[02:47:31][eventmanager.cpp:368]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1577
 ```
 
 ## Changelog
@@ -84,6 +84,11 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 2.3.0 Mark as compatible for Stellaris 3.3 "Libra" - no script changes
 * 2.4.0 Governors from species with the "Numistic Administration" trait gain the "Merchant of Numa" leader trait
 * 3.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for effects
+* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Apply Synthetic leader traits to machine leaders that qualify (added to the base game in 3.6) - previously, this was part of a companion mod
+    * Properly allow _all_ non-robotic leaders to roll for brainslugs in countries that have completed the special project
+    * Ensure leaders have the corresponding patron-specific ruler and class-specific "Chosen" traits when possible
+    * Ensure leaders with any "Chosen" traits do not have the regular, non-"Chosen" psionic traits
 
 ## Source Code
 
