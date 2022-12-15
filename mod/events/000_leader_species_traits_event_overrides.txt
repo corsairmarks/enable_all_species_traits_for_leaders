@@ -56,10 +56,16 @@ country_event = {
 	id = utopia.2601
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = {
+		exists = from
+		from = { species = { has_trait = trait_latent_psionic } }
+	}
 	immediate = {
 		# this event is already gated behind a 20% random_events = { }
-		add_leader_trait_latent_psionic = yes
-		set_leader_flag = leader_trait_latent_psionic_chance
+		from = {
+			add_leader_trait_latent_psionic = yes
+			set_leader_flag = leader_trait_latent_psionic_chance
+		}
 	}
 }
 
