@@ -831,14 +831,14 @@ add_static_applicable_leader_species_traits = {
 
 add_randomized_applicable_leader_species_traits = {
 	optimize_memory
-	roll_for_brainslug_trait = yes
-	roll_for_latent_psionic_trait = yes
+	roll_for_leader_trait_brainslug = yes
+	roll_for_leader_trait_latent_psionic = yes
 }
 
 # 20% chance for the brainslug trait to be added (based on conditions from distar.173/distar.174)
 # Only attempts to roll for each trait if and only if the leader has not already rolled (determined
 # by a flag). More fair because existing leaders now get a 1-time chance to gain the trait.
-roll_for_brainslug_trait = {
+roll_for_leader_trait_brainslug = {
 	optimize_memory
 	if = {
 		limit = {
@@ -870,7 +870,7 @@ roll_for_brainslug_trait = {
 # 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
 # Only attempts to roll for each trait if and only if the leader has not already rolled (determined
 # by a flag). More fair because existing leaders now get a 1-time chance to gain the trait.
-roll_for_latent_psionic_trait = {
+roll_for_leader_trait_latent_psionic = {
 	optimize_memory
 	if = {
 		limit = {

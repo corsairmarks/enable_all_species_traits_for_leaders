@@ -94,7 +94,7 @@ country_event = {
 		exists = from
 	}
 	immediate = {
-		from = { roll_for_brainslug_trait = yes }
+		from = { roll_for_leader_trait_brainslug = yes }
 	}
 }
 
@@ -104,7 +104,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		every_pool_leader = { roll_for_brainslug_trait = yes }
+		every_pool_leader = { roll_for_leader_trait_brainslug = yes }
 	}
 }
 
