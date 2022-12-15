@@ -18,7 +18,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
-This mod overrides five default events related to adding leader traits: `distar.173`, `distar.174` ,`utopia.2508`, `utopia.2601`, and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.  For this mod, these events are stored in the file `events/000_leader_species_traits_event_overrides.txt`.
+This mod overrides five default events related to adding leader traits: `distar.173`, `distar.174`, `utopia.2508`, `utopia.2601`, and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.  For this mod, these events are stored in the file `events/000_leader_species_traits_event_overrides.txt`.
 
 1. For `distar.173` and/or `distar.174`, the easiest way to resolve the conflict is to comment out or delete the event(s) from this mod.  The overrides are just a cleaner way to add the initial brainslug trait for hireable leaders. If removed or disabled, the original in-game code will execute instead but it has a very low impact.
 2. `utopia.2508` is the default event for adding or removing Erudite leader traits.  That event uses the effect `remove_leader_traits_after_modification` which is also overridden.  If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that _any_ species in your empire is modified.
