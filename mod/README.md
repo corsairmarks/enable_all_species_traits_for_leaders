@@ -89,6 +89,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Properly allow _all_ non-robotic leaders to roll for brainslugs in countries that have completed the special project
     * Ensure leaders have the corresponding patron-specific ruler and class-specific "Chosen" traits when possible
     * Ensure leaders with any "Chosen" traits do not have the regular, non-"Chosen" psionic traits
+* 4.0.1 Fix a bug in the logic when determining whether to add Synthetic leader traits
 
 ## Source Code
 
