@@ -106,6 +106,23 @@ leader_event = {
 	}
 }
 
+# triggered by on_single_player_save_game_load
+event = {
+	id = leader_species_traits.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = leader_species_traits_installed }
+	}
+	immediate = {
+		every_country = {
+			country_event = {
+				id = leader_species_traits.8
+			}
+		}
+	}
+}
+
 # mean time-to-happen
 country_event = {
 	id = leader_species_traits.7
@@ -202,23 +219,6 @@ country_event = {
 				governor = { add_trait = leader_trait_governor_brainslug }
 				scientist = { add_trait = leader_trait_scientist_brainslug }
 				ruler = { add_trait = leader_trait_ruler_brainslug }
-			}
-		}
-	}
-}
-
-# triggered by on_single_player_save_game_load
-event = {
-	id = leader_species_traits.6
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_installed }
-	}
-	immediate = {
-		every_country = {
-			country_event = {
-				id = leader_species_traits.8
 			}
 		}
 	}
