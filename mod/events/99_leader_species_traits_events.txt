@@ -20,7 +20,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
+		from = {
 			leader_event = {
 				id = leader_species_traits.5
 			}
@@ -35,14 +35,14 @@ country_event = {
 	hide_window = yes
 	immediate = {
 		every_owned_leader = {
-			limit = { species = { is_exact_same_species = FROM } }
+			limit = { species = { is_exact_same_species = from } }
 			leader_event = {
 				id = leader_species_traits.5
 			}
 		}
 
 		every_pool_leader = {
-			limit = { species = { is_exact_same_species = FROM } }
+			limit = { species = { is_exact_same_species = from } }
 			leader_event = {
 				id = leader_species_traits.5
 			}
@@ -56,7 +56,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
+		from = {
 			add_static_applicable_leader_species_traits = yes
 			if = {
 				limit = { has_ruler_trait = leader_trait_ruler_brainslug }
