@@ -1,18 +1,5 @@
 namespace = leader_species_traits
 
-# flag mod as active
-event = {
-	id = leader_species_traits.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_installed }
-	}
-	immediate = {
-		set_global_flag = leader_species_traits_installed
-	}
-}
-
 # new leaders get every applicable species-specific leader trait
 # note that the code for brainslugs and latent psionics are a 20% chance each and not guaranteed, as in the default game
 country_event = {
@@ -106,14 +93,11 @@ leader_event = {
 	}
 }
 
-# triggered by on_single_player_save_game_load
+# triggered only once - either immediately at game start, or the first time the game is loaded with this mod active
 event = {
 	id = leader_species_traits.6
 	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_installed }
-	}
+	fire_only_once = yes
 	immediate = {
 		every_country = {
 			country_event = {

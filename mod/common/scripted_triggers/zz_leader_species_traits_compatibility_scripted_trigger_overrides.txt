@@ -1,0 +1,7 @@
+# compatibility trigger - any mods that wish to check for features from this mod should implement a scripted_trigger
+# with exactly the same name and "always = no" in a file named to load _before_ this one (i.e. 00_my_mod_triggers.txt)
+# this = any
+has_leader_species_traits_active = {
+	optimize_memory
+	always = yes
+}

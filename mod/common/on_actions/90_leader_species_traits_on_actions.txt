@@ -1,23 +1,8 @@
 # fired when the game starts
-on_game_start = {
-	events = {
-		leader_species_traits.13 # flag mod as installed
-	}
-}
-
-# fired when the game starts
 # this = country
 on_game_start_country = {
 	events = {
 		leader_species_traits.8
-	}
-}
-
-# fired when loading a single-player game
-on_single_player_save_game_load = {
-	events = {
-		leader_species_traits.6
-		leader_species_traits.13 # flag mod as installed
 	}
 }
 
