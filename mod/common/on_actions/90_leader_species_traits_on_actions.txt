@@ -6,6 +6,13 @@ on_game_start_country = {
 	}
 }
 
+# fired when loading a single-player game
+on_single_player_save_game_load = {
+	events = {
+		leader_species_traits.6
+	}
+}
+
 # fired when a new leader is generated for an empire, to be available for recruitment
 # this = country
 # from = leader
