@@ -27,6 +27,10 @@ This mod overrides five default events related to adding leader traits: `distar.
 
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
+### When to Install
+
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented through custom events and effects without adding gameplay objects.  If you remove it, your game will work normally.
+
 ### Recommended Companion Mods
 
 Like leaders?  Try some of my other leader-related mods that work with this one.
@@ -36,10 +40,6 @@ Like leaders?  Try some of my other leader-related mods that work with this one.
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) helps your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get _any_ of the class-appropriate traits when levelling up
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) lets you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 * [[JP localize patch]Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2569179425) Japanese localisation by Dryus
-
-### When to Install
-
-This mod can be safely added or removed from your savegame after the game has started.  It is implemented through custom events and effects without adding gameplay objects.  If you remove it, your game will work normally.
 
 ## Known Issues
 
