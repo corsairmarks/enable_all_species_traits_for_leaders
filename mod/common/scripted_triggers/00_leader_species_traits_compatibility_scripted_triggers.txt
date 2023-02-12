@@ -1,0 +1,6 @@
+# supports features from my mod Special Leadership Privileges for Battle Thralls and Bio-Trophies
+# this = any
+has_battle_thrall_military_leaders_active = {
+	optimize_memory
+	always = no
+}

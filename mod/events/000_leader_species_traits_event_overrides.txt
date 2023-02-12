@@ -85,6 +85,358 @@ country_event = {
 # 	immediate = { }
 # }
 
+# override the event to enable the brainslug project - cyborgs (including assimilators) are allowed to research it
+ship_event = {
+	id = distar.170
+	title = "distar.170.name"
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					is_machine_empire = no
+					has_civic = civic_machine_assimilator
+				}
+			}
+		}
+		text = "distar.170.desc"
+	}
+	desc = {
+		trigger = {
+			owner = {
+				is_machine_empire = yes
+				NOT = { has_civic = civic_machine_assimilator }
+			}
+		}
+		text = "distar.170.desc.machi"
+	}
+	picture = GFX_evt_alien_nature
+	show_sound = event_alien_nature
+	location = from
+	is_triggered_only = yes
+	immediate = { owner = { set_country_flag = brainslug_divination_flag } }
+	option = {
+		trigger = {
+			owner = {
+				OR = {
+					is_machine_empire = no
+					has_civic = civic_machine_assimilator
+					hidden:AND = {
+						hidden_trigger = { has_battle_thrall_military_leaders_active = yes }
+						has_civic = civic_machine_servitor
+					}
+				}
+				
+			}
+		}
+		allow = { any_owned_pop_species = { is_robotic = no } }
+		name = "distar.170.a"
+		from = {
+			enable_special_project = {
+				name = "BRAINSLUG_PROJECT"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+	option = {
+		trigger = { owner = { is_machine_empire = no } }
+		name = NOTIME
+	}
+	option = {
+		trigger = { owner = { has_authority = auth_machine_intelligence } }
+		name = "distar.170.machi"
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+}
+
+# override the special project completion event
+# * ensure robotic scientists can't volunteer to act as the host
+# * an organic scientist volunteers instead of the robotic scientist
+# * no organic scientists, no brainslug powers
+ship_event = {
+	id = distar.171
+	title = "distar.171.name"
+	desc = {
+		trigger = { leader = { is_robotic_species = no } }
+		text = "distar.171.desc"
+	}
+	desc = {
+		trigger = {
+			leader = { is_robotic_species = yes }
+			owner = {
+				any_owned_leader = {
+					leader_class = scientist
+					is_robotic_species = no
+				}
+			}
+		}
+		text = "distar.171.desc.robotic.volunteer"
+	}
+	desc = {
+		trigger = {
+			leader = { is_robotic_species = yes }
+			owner = {
+				NOT = {
+					any_owned_leader = {
+						leader_class = scientist
+						is_robotic_species = no
+					}
+				}
+			}
+		}
+		text = "distar.171.desc.robotic.none"
+	}
+	picture = GFX_evt_society_research
+	show_sound = event_alien_nature
+	location = from
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { leader = { is_robotic_species = no } }
+			leader = { save_event_target_as = brainslug_scientist }
+		}
+		else = {
+			owner = {
+				random_owned_leader = {
+					limit = {
+						leader_class = scientist
+						is_robotic_species = no
+					}
+					weights = {
+						base = 1
+						modifier = {
+							factor = 0.01
+							OR = {
+								leader_of_faction = isolationist
+								leader_of_faction = supremacist
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								leader_of_faction = technologist
+								leader_of_faction = xenoist
+								leader_of_faction = manifesti
+							}
+						}
+						modifier = {
+							add = 100
+							is_idle = yes
+						}
+						modifier = {
+							add = 50
+							exists = fleet
+							fleet = { is_ship_class = shipclass_science_ship }
+						}
+					}
+					save_event_target_as = brainslug_scientist
+				}
+			}
+		}
+	}
+	after = {
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+	option = {
+		name = "distar.171.a"
+	}
+	option = {
+		name = "distar.171.b"
+		trigger = { hidden_trigger = { exists = event_target:brainslug_scientist } }
+		hidden_effect = {
+			ship_event = {
+				id = distar.172
+				days = 30
+			}
+		}
+	}
+}
+
+# override symbiont success event - event_target:brainslug_scientist receives the trait, only non-robotic species and leaders are considered for the trait
+ship_event = {
+	id = distar.172
+	title = "distar.172.name"
+	desc = "distar.172.desc"
+	picture = GFX_evt_hive_mind
+	show_sound = event_alien_nature
+	location = root
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:brainslug_scientist
+	}
+	immediate = {
+		event_target:brainslug_scientist = { add_trait = leader_trait_scientist_brainslug }
+		owner = { set_country_flag = finished_brainslug_chain }
+	}
+	option = {
+		trigger = {
+			hidden_trigger = {
+				owner = {
+					OR = {
+						is_xenophobe = no
+						any_owned_pop = { is_xenophobe = no } # at least one sluggable pop in xenophobe empire
+					}
+				}
+			}
+		}
+		name = "distar.172.a"
+		owner = {
+			while = { # slug *up to* three non-phobe pops
+				count = 3
+				random_owned_pop = {
+					limit = {
+						is_robot_pop = no
+						is_sapient = yes
+						can_think = yes
+						species = { NOT = { has_trait = trait_brainslug } }
+					}
+					weights = {
+						base = 1
+						modifier = {
+							factor = 0.01
+							OR = {
+								is_xenophobe = yes
+								member_of_faction = isolationist
+								member_of_faction = supremacist
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_citizenship_type = {
+									type = citizenship_assimilation
+									country = owner
+								}
+								has_citizenship_type = {
+									type = citizenship_robot_servitude
+									country = owner
+								}
+								has_citizenship_type = {
+									type = citizenship_purge
+									country = owner
+								}
+								has_citizenship_type = {
+									type = citizenship_purge_machine
+									country = owner
+								}
+							}
+						}
+						modifier = {
+							factor = 0.25
+							has_citizenship_type = {
+								type = citizenship_slavery
+								country = owner
+							}
+						}
+						modifier = {
+							factor = 0.5
+							has_citizenship_type = {
+								type = citizenship_limited
+								country = owner
+							}
+						}
+						modifier = {
+							factor = 1.5
+							member_of_faction = no
+							OR = {
+								is_xenophile = yes
+								is_materialist = yes
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								member_of_faction = technologist
+								member_of_faction = xenoist
+								member_of_faction = manifesti
+							}
+						}
+						modifier = {
+							factor = 5
+							species = { is_same_species = owner.owner_species }
+						}
+						modifier = {
+							factor = 2
+							species = {
+								OR = {
+									has_trait = trait_natural_physicists
+									has_trait = trait_natural_sociologists
+									has_trait = trait_natural_engineers
+								}
+							}
+						}
+						modifier = {
+							factor = 3
+							species = { has_trait = trait_intelligent }
+						}
+						modifier = {
+							factor = 4
+							species = { has_trait = trait_erudite }
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_brainslug
+						add_traits_at_start_of_list = yes
+						effect = {
+							set_citizenship_type = {
+								country = root.owner
+								type = citizenship_full
+								cooldown = no
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				while = {
+					count = 2
+					random_owned_leader = {
+						limit = {
+							leader_class = scientist
+							is_robotic_species = no
+							NOT = { has_trait = leader_trait_scientist_brainslug }
+						}
+						add_trait = leader_trait_scientist_brainslug
+					}
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = governor
+						is_robotic_species = no
+						NOT = { has_trait = leader_trait_scientist_brainslug }
+					}
+					add_trait = leader_trait_governor_brainslug
+				}
+				country_event = {
+					id = distar.174 # Pool leaders get trait
+				}
+				country_event = {
+					id = distar.175 # Unrest is generated
+				}
+			}
+		}
+	}
+	option = {
+		name = "distar.172.b"
+		custom_tooltip = "distar.172.b.tooltip"
+	}
+}
+
 # override the default on_leader_spawned brainslug event
 country_event = {
 	id = distar.173
