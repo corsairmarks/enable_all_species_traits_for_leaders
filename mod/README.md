@@ -91,6 +91,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Ensure leaders with any "Chosen" traits do not have the regular, non-"Chosen" psionic traits
 * 4.0.1 Fix a bug in the logic when determining whether to add Synthetic leader traits
 * 5.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
+* 5.1.0 Add overrides of more brainslug events so that cybernetic empires (including Driven Assimilators) can complete the project
 
 ## Source Code
 
