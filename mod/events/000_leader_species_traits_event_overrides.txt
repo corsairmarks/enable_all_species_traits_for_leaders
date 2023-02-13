@@ -120,7 +120,7 @@ ship_event = {
 				OR = {
 					is_machine_empire = no
 					has_civic = civic_machine_assimilator
-					hidden:AND = {
+					AND = {
 						hidden_trigger = { has_battle_thrall_military_leaders_active = yes }
 						has_civic = civic_machine_servitor
 					}
@@ -128,7 +128,7 @@ ship_event = {
 				
 			}
 		}
-		allow = { any_owned_pop_species = { is_robotic = no } }
+		allow = { owner = { any_owned_pop_species = { is_robotic = no } } }
 		name = "distar.170.a"
 		from = {
 			enable_special_project = {
@@ -367,7 +367,7 @@ ship_event = {
 						}
 						modifier = {
 							factor = 5
-							species = { is_same_species = owner.owner_species }
+							species = { is_same_species = prev.owner.owner_species }
 						}
 						modifier = {
 							factor = 2
