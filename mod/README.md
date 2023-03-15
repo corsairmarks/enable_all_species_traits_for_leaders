@@ -16,7 +16,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 This mod overrides eight default events related to adding leader traits: `distar.170`, `distar.171`, `distar.172`, `distar.173`, `distar.174`, `utopia.2508`, `utopia.2601`, and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.  For this mod, these events are stored in the file `events/000_leader_species_traits_event_overrides.txt`.
 
@@ -96,6 +96,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 4.0.1 Fix a bug in the logic when determining whether to add Synthetic leader traits
 * 5.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
 * 5.1.0 Add overrides of more brainslug events so that cybernetic empires (including Driven Assimilators) can complete the project
+* 6.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying game changes
 
 ## Source Code
 

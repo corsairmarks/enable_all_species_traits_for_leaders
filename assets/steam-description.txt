@@ -11,7 +11,7 @@ This mod unifies adding/removing species-based traits for leaders, and it will a
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?" So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.6 "Orion." Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
 
 This mod overrides eight default events related to adding leader traits: [b]distar.170[/b], [b]distar.171[/b], [b]distar.172[/b], [b]distar.173[/b], [b]distar.174[/b], [b]utopia.2508[/b], [b]utopia.2601[/b], and [b]utopia.2605[/b]. Other mods that make changes to any of the same events will conflict with this one.
 [olist]
