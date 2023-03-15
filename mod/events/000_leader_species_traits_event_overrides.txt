@@ -113,7 +113,13 @@ ship_event = {
 	show_sound = event_alien_nature
 	location = from
 	is_triggered_only = yes
-	immediate = { owner = { set_country_flag = brainslug_divination_flag } }
+	immediate = {
+		owner = { set_country_flag = brainslug_divination_flag }
+		from = {
+			save_event_target_as = pre_sapient_planet
+			create_generic_presapient_species = { UPLIFT_TO = REP }
+		}
+	}
 	option = {
 		trigger = {
 			owner = {
