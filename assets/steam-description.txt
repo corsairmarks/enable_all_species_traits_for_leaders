@@ -32,7 +32,7 @@ Like leaders? Try some of my other leader-related mods that work with this one.
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2784224276]Leader Traits: Merge-Add Species Traits[/url] re-enables combining species traits like Cybernetic and Psionic via applying species templates, so that it is easier to create a superspecies with multiple leader-beneficial species traits
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] helps your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] helps your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get [i]any[/i] of the class-appropriate traits when levelling up
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] lets you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects & Pre-FTL Civilizations[/url] lets you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
 [h2]Known Issues[/h2]
