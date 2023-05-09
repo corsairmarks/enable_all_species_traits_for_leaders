@@ -32,15 +32,6 @@ on_modification_complete = {
 	}
 }
 
-# fired when the ruler is ousted and goes back to their pre-ruler class
-# this = country
-# from = previous Ruler, already has the new class
-on_ruler_back_to_pre_ruler_class = {
-	events = {
-		leader_species_traits.3
-	}
-}
-
 # this = owner of fleet 1 (combatant)
 # from = owner of fleet 2 (destroyed)
 # fromfrom = fleet 1
