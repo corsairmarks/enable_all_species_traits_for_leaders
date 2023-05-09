@@ -16,7 +16,7 @@ The original inspiration for me to create this mod was the "Promising Officer" e
 
 ## Compatibility
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 This mod overrides eight default events related to adding leader traits: `distar.170`, `distar.171`, `distar.172`, `distar.173`, `distar.174`, `utopia.2508`, `utopia.2601`, and `utopia.2605`.  Other mods that make changes to any of the same events will conflict with this one.  For this mod, these events are stored in the file `events/000_leader_species_traits_event_overrides.txt`.
 
@@ -43,6 +43,12 @@ Like leaders?  Try some of my other leader-related mods that work with this one.
 * [[JP localize patch]Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2569179425) Japanese localisation by Dryus
 
 ## Known Issues
+
+### Stellaris Bugs
+
+Traits that are intended to function on regular leaders and also as Councilor traits for rulers are not able to be correctly added to rulers in Dictatorial, Imperial, or Gestalt empires.  This includes built-in traits like Psychic and Cyborg.
+
+### Error Logs
 
 Overriding events and effects from the default game causes error logs.  Expect to see nine lines similar to this in error.log:
 
@@ -97,6 +103,9 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 5.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
 * 5.1.0 Add overrides of more brainslug events so that cybernetic empires (including Driven Assimilators) can complete the project
 * 6.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying game changes
+* 7.0.0 Update for Stellaris version 3.8 "Gemini"
+    * Integrate underlying game changes (lots of code simplification)
+    * Do not attempt to adjust leader traits for Clone Soldiers if [Leader Traits: Clone Army - All Leader Classes](https://steamcommunity.com/sharedfiles/filedetails/?id=2784215835) is active
 
 ## Source Code
 

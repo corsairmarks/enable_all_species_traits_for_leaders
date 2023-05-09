@@ -11,7 +11,7 @@ This mod unifies adding/removing species-based traits for leaders, and it will a
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?" So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 
 This mod overrides eight default events related to adding leader traits: [b]distar.170[/b], [b]distar.171[/b], [b]distar.172[/b], [b]distar.173[/b], [b]distar.174[/b], [b]utopia.2508[/b], [b]utopia.2601[/b], and [b]utopia.2605[/b]. Other mods that make changes to any of the same events will conflict with this one.
 [olist]
@@ -36,6 +36,10 @@ Like leaders? Try some of my other leader-related mods that work with this one.
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
 [h2]Known Issues[/h2]
+[h3]Stellaris Bugs[/h3]
+Traits that are intended to function on regular leaders and also as Councilor traits for rulers are not able to be correctly added to rulers in Dictatorial, Imperial, or Gestalt empires.  This includes built-in traits like Psychic and Cyborg.
+
+[h3]Error Logs[/h3]
 Overriding events and effects from the default game causes error logs. Expect to see nine lines similar to this in error.log:
 [code]
 [01:05:45][game_singleobjectdatabase.h:165]: Object with key: remove_leader_traits_after_modification already exists, using the one at file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
