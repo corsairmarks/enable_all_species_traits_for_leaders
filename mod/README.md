@@ -8,7 +8,7 @@ Governors whose species has the "Numistic Administration" trait gain the "Mercha
 
 # Changes
 
-This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned (`on_leader_spawned`), when a species is modified (`on_modification_complete` - including a one-time, independent chance for latent psionics or brainslugs), or when a ruler returns to their previous leader job (`on_ruler_back_to_pre_ruler_class` - ensures brainslugged/psionic rulers keep their trait(s) when being demoted).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
+This mod unifies adding/removing species-based traits for leaders, and it will automatically fire when leaders are spawned (`on_leader_spawned`) or when a species is modified (`on_modification_complete` - including a one-time, independent chance for latent psionics or brainslugs).  It does not replace the majority of the existing game code for these traits in order to off maximum compatibility with other mods, but it does occasionally result in leaders having their traits in a different order.
 
 The same code is used in each of these three cases (via effects) that do not enforce any requirements other than "does the leader's species have the necessary prerequisite species trait?"  So if you've managed to glitch the game into having Psionic Robots, you'll end up with psionic robot leaders.
 
