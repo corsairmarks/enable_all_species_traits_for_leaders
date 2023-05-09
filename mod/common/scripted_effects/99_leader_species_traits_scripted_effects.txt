@@ -55,8 +55,8 @@ add_leader_trait_synthetic = {
 					has_active_tradition = tr_synthetics_finish_machine # machine synthetic empires
 				}
 			}
-			add_trait_no_notify = leader_trait_synthetic
 		}
+		add_trait_no_notify = leader_trait_synthetic
 	}
 }
 
@@ -190,7 +190,7 @@ remove_leader_trait_psionic = {
 			species = { has_psionic_species_trait = no }
 			has_trait = leader_trait_psionic
 		}
-		remove_trait = leader_trait_admiral_psionic
+		remove_trait = leader_trait_psionic
 	}
 }
 

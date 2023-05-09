@@ -37,28 +37,6 @@ country_event = {
 	}
 }
 
-# demoted rulers should always keep their brainslug/latent psionic traits if their species has the right trait
-country_event = {
-	id = leader_species_traits.3
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		from = {
-			add_static_applicable_leader_species_traits = yes
-			if = {
-				limit = { has_ruler_trait = leader_trait_ruler_brainslug }
-				add_leader_trait_brainslug = yes
-			}
-			if = {
-				limit = { has_ruler_trait = leader_trait_ruler_psionic }
-				add_leader_trait_psionic = yes
-			}
-			remove_all_inapplicable_leader_species_traits = yes
-			adjust_psionic_chosen_traits = yes
-		}
-	}
-}
-
 # follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
 # should be harmless if executed against another admiral - assuming they had species-appropriate traits in the first place, no changes will be made
 country_event = {

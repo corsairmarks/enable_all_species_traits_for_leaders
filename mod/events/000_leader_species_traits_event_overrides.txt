@@ -194,21 +194,6 @@ ship_event = {
 					weights = {
 						base = 1
 						modifier = {
-							factor = 0.01
-							OR = {
-								leader_of_faction = isolationist
-								leader_of_faction = supremacist
-							}
-						}
-						modifier = {
-							factor = 2
-							OR = {
-								leader_of_faction = technologist
-								leader_of_faction = xenoist
-								leader_of_faction = manifesti
-							}
-						}
-						modifier = {
 							add = 100
 							is_idle = yes
 						}
@@ -216,6 +201,18 @@ ship_event = {
 							add = 50
 							exists = fleet
 							fleet = { is_ship_class = shipclass_science_ship }
+						}
+						modifier = {
+							factor = 0.01
+							is_xenophobe = yes
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								is_materialist = yes
+								is_xenophile = yes
+								is_egalitarian = yes
+							}
 						}
 					}
 					save_event_target_as = brainslug_scientist
@@ -402,7 +399,7 @@ ship_event = {
 						is_robotic_species = no
 						NOT = { has_trait = leader_trait_brainslug }
 					}
-					add_trait = leader_trait_governor_brainslug
+					add_trait = leader_trait_brainslug
 				}
 				country_event = {
 					id = distar.174 # Pool leaders get trait
