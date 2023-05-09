@@ -3,7 +3,7 @@ namespace = utopia
 
 # majority commented out because overrides were unnecessary - the new events clean up any weirdness
 
-# override default erudite on_modification_complete event
+# override default on_modification_complete erudite event
 country_event = {
 	id = utopia.2508
 	is_triggered_only = yes
@@ -11,7 +11,7 @@ country_event = {
 	immediate = { }
 }
 
-# # override the default erudite on_leader_spawned event
+# # override the default on_leader_spawned erudite event
 # country_event = {
 # 	id = utopia.2509
 # 	is_triggered_only = yes
@@ -27,25 +27,9 @@ country_event = {
 # 	immediate = { }
 # }
 
-# # override the default on_ruler_back_to_pre_ruler_class cyborg event
-# country_event = {
-# 	id = utopia.2511
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
-
 # # override the default on_leader_spawned synthetic event
 # country_event = {
 # 	id = utopia.2560
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
-
-# # override the default on_ruler_back_to_pre_ruler_class synthetic event
-# country_event = {
-# 	id = utopia.2561
 # 	is_triggered_only = yes
 # 	hide_window = yes
 # 	immediate = { }
@@ -72,14 +56,6 @@ country_event = {
 # # override the default on_leader_spawned psionic event
 # country_event = {
 # 	id = utopia.2651
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	immediate = { }
-# }
-
-# # override the default on_ruler_back_to_pre_ruler_class psionic event
-# country_event = {
-# 	id = utopia.2653
 # 	is_triggered_only = yes
 # 	hide_window = yes
 # 	immediate = { }
@@ -285,7 +261,7 @@ ship_event = {
 		exists = event_target:brainslug_scientist
 	}
 	immediate = {
-		event_target:brainslug_scientist = { add_trait = leader_trait_scientist_brainslug }
+		event_target:brainslug_scientist = { add_trait = leader_trait_brainslug }
 		owner = { set_country_flag = finished_brainslug_chain }
 	}
 	option = {
@@ -415,16 +391,16 @@ ship_event = {
 						limit = {
 							leader_class = scientist
 							is_robotic_species = no
-							NOT = { has_trait = leader_trait_scientist_brainslug }
+							NOT = { has_trait = leader_trait_brainslug }
 						}
-						add_trait = leader_trait_scientist_brainslug
+						add_trait = leader_trait_brainslug
 					}
 				}
 				random_owned_leader = {
 					limit = {
 						leader_class = governor
 						is_robotic_species = no
-						NOT = { has_trait = leader_trait_scientist_brainslug }
+						NOT = { has_trait = leader_trait_brainslug }
 					}
 					add_trait = leader_trait_governor_brainslug
 				}
@@ -473,53 +449,26 @@ country_event = {
 	desc = utopia.2605.desc
 	picture = GFX_evt_psionics
 	show_sound = event_psionic
-
 	trigger = {
 		any_owned_leader = {
 			species = { has_trait = trait_latent_psionic }
 			NOR = {
-				has_trait = leader_trait_admiral_psionic
-				has_trait = leader_trait_general_psionic
-				has_trait = leader_trait_governor_psionic
-				has_trait = leader_trait_scientist_psionic
-				has_trait = leader_trait_ruler_psionic
-				has_trait = leader_trait_admiral_chosen
-				has_trait = leader_trait_general_chosen
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen
-				has_trait = leader_trait_ruler_chosen
-				has_trait = leader_trait_ruler_composer_chosen
-				has_trait = leader_trait_ruler_eater_chosen
-				has_trait = leader_trait_ruler_instrument_chosen
-				has_trait = leader_trait_ruler_whisperers_chosen
+				has_trait = leader_trait_psionic
+				has_trait = leader_trait_chosen
 			}
-			has_chosen_covenant_trait_non_ruler = no
+			has_chosen_covenant_trait_non_ruler = no # really checks whether the leader has any chosen covenant trait
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 120
 	}
-
 	immediate = {
 		random_owned_leader = {
 			limit = {
 				species = { has_trait = trait_latent_psionic }
 				NOR = {
-					has_trait = leader_trait_admiral_psionic
-					has_trait = leader_trait_general_psionic
-					has_trait = leader_trait_governor_psionic
-					has_trait = leader_trait_scientist_psionic
-					has_trait = leader_trait_ruler_psionic
-					has_trait = leader_trait_admiral_chosen
-					has_trait = leader_trait_general_chosen
-					has_trait = leader_trait_governor_chosen
-					has_trait = leader_trait_scientist_chosen
-					has_trait = leader_trait_ruler_chosen
-					has_trait = leader_trait_ruler_composer_chosen
-					has_trait = leader_trait_ruler_eater_chosen
-					has_trait = leader_trait_ruler_instrument_chosen
-					has_trait = leader_trait_ruler_whisperers_chosen
+					has_trait = leader_trait_psionic
+					has_trait = leader_trait_chosen
 				}
 				has_chosen_covenant_trait_non_ruler = no
 			}
@@ -529,21 +478,6 @@ country_event = {
 
 	option = {
 		name = utopia.2605.a
-		event_target:psionic_leader = {
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
-					add_ruler_trait = leader_trait_ruler_psionic
-				}
-			}
-			switch = {
-				trigger = leader_class
-				admiral = { add_trait = leader_trait_admiral_psionic }
-				general = { add_trait = leader_trait_general_psionic }
-				governor = { add_trait = leader_trait_governor_psionic }
-				scientist = { add_trait = leader_trait_scientist_psionic }
-				ruler = { add_trait = leader_trait_ruler_psionic }
-			}
-		}
+		event_target:psionic_leader = { add_trait = leader_trait_psionic }
 	}
 }

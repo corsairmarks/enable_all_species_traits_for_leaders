@@ -118,9 +118,8 @@ country_event = {
 	desc = leader_species_traits.7.desc
 	picture = GFX_evt_hive_mind
 	show_sound = event_alien_nature
-
 	trigger = {
-		# intentionally allows leaders to be chosen regardless of whether they previously rolled on having a brainslug
+		# intentionally allows leaders to be selected regardless of whether they previously rolled on having a brainslug
 		any_owned_leader = {
 			OR = {
 				species = { has_trait = trait_brainslug }
@@ -130,13 +129,7 @@ country_event = {
 					is_robotic_species = no
 				}
 			}
-			NOR = {
-				has_trait = leader_trait_admiral_brainslug
-				has_trait = leader_trait_general_brainslug
-				has_trait = leader_trait_governor_brainslug
-				has_trait = leader_trait_scientist_brainslug
-				has_trait = leader_trait_ruler_brainslug
-			}
+			NOT = { has_trait = leader_trait_brainslug }
 			OR = {
 				NOT = { exists = pop_faction }
 				pop_faction = {
@@ -148,11 +141,9 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 120
 	}
-
 	immediate = {
 		random_owned_leader = {
 			limit = {
@@ -163,13 +154,7 @@ country_event = {
 						is_robotic_species = no
 					}
 				}
-				NOR = {
-					has_trait = leader_trait_admiral_brainslug
-					has_trait = leader_trait_general_brainslug
-					has_trait = leader_trait_governor_brainslug
-					has_trait = leader_trait_scientist_brainslug
-					has_trait = leader_trait_ruler_brainslug
-				}
+				NOT = { has_trait = leader_trait_brainslug }
 				OR = {
 					NOT = { exists = pop_faction }
 					pop_faction = {
@@ -190,25 +175,9 @@ country_event = {
 			save_event_target_as = brainslugged_leader
 		}
 	}
-
 	option = {
 		name = leader_species_traits.7.a
-		event_target:brainslugged_leader = {
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
-					add_ruler_trait = leader_trait_ruler_brainslug
-				}
-			}
-			switch = {
-				trigger = leader_class
-				admiral = { add_trait = leader_trait_admiral_brainslug }
-				general = { add_trait = leader_trait_general_brainslug }
-				governor = { add_trait = leader_trait_governor_brainslug }
-				scientist = { add_trait = leader_trait_scientist_brainslug }
-				ruler = { add_trait = leader_trait_ruler_brainslug }
-			}
-		}
+		event_target:brainslugged_leader = { add_trait = leader_trait_brainslug }
 	}
 }
 
