@@ -53,15 +53,15 @@ Traits that are intended to function on regular leaders and also as Councilor tr
 Overriding events and effects from the default game causes error logs.  Expect to see nine lines similar to this in error.log:
 
 ```
-[01:05:45][game_singleobjectdatabase.h:165]: Object with key: remove_leader_traits_after_modification already exists, using the one at  file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
-[01:05:46][eventmanager.cpp:368]: an event with id [distar.170] already exists!  file: events/distant_stars_events_1.txt line: 4997
-[01:05:46][eventmanager.cpp:368]: an event with id [distar.171] already exists!  file: events/distant_stars_events_1.txt line: 5080
-[01:05:46][eventmanager.cpp:368]: an event with id [distar.172] already exists!  file: events/distant_stars_events_1.txt line: 5124
-[01:05:46][eventmanager.cpp:368]: an event with id [distar.173] already exists!  file: events/distant_stars_events_1.txt line: 5288
-[01:05:46][eventmanager.cpp:368]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5427
-[01:05:46][eventmanager.cpp:368]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 619
-[01:05:46][eventmanager.cpp:368]: an event with id [utopia.2601] already exists!  file: events/utopia_on_action_events.txt line: 1460
-[01:05:46][eventmanager.cpp:368]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1577
+[00:39:58][game_singleobjectdatabase.h:153]: Object with key: remove_leader_traits_after_modification already exists, using the one at  file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
+[00:40:00][eventmanager.cpp:369]: an event with id [distar.170] already exists!  file: events/distant_stars_events_1.txt line: 5061
+[00:40:00][eventmanager.cpp:369]: an event with id [distar.171] already exists!  file: events/distant_stars_events_1.txt line: 5148
+[00:40:00][eventmanager.cpp:369]: an event with id [distar.172] already exists!  file: events/distant_stars_events_1.txt line: 5192
+[00:40:00][eventmanager.cpp:369]: an event with id [distar.173] already exists!  file: events/distant_stars_events_1.txt line: 5356
+[00:40:00][eventmanager.cpp:369]: an event with id [distar.174] already exists!  file: events/distant_stars_events_1.txt line: 5401
+[00:40:01][eventmanager.cpp:369]: an event with id [utopia.2508] already exists!  file: events/utopia_on_action_events.txt line: 634
+[00:40:01][eventmanager.cpp:369]: an event with id [utopia.2601] already exists!  file: events/utopia_on_action_events.txt line: 1290
+[00:40:01][eventmanager.cpp:369]: an event with id [utopia.2605] already exists!  file: events/utopia_on_action_events.txt line: 1378
 ```
 
 ## Changelog
