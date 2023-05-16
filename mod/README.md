@@ -76,15 +76,15 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 1.4.1 Minor bugfixes
     * Existing leaders now get a once-per-trait, independent chance for gaining (latent) Psionic or Brainslugged (rather than excluding these traits)
     * Properly restrict trait changes to the _exact_ species that was modified
-* 1.5.0 Mark as compatible for Stellaris 3.1 "Lem" - no script changes
+* 1.5.0 Mark as compatible with Stellaris version 3.1 "Lem" - no script changes
 * 2.0.0 Add handling for Clone Army admiral traits
 * 2.0.1 Fix issue where the Erudite leader trait was deleted from species that had a combo of Erudite plus one or more of Latent Psionic, Psionic, or Cybernetic when other species were modified
 * 2.1.0 Be more automagical
     * Add events to adjust leader species-based traits when the game starts and also if the mod is added during gameplay
     * Allow Machine Units to keep Synthetic leader traits if Leader Traits: Synthetic Leader Traits for Machine Units is also installed
-* 2.2.0 Mark as compatible for Stellaris 3.2 "Herbert" - no script changes
+* 2.2.0 Mark as compatible with Stellaris version 3.2 "Herbert" - no script changes
 * 2.2.1 Fix Clone Soldier bug that didn't take into account leader class
-* 2.3.0 Mark as compatible for Stellaris 3.3 "Libra" - no script changes
+* 2.3.0 Mark as compatible with Stellaris version 3.3 "Libra" - no script changes
 * 2.4.0 Governors from species with the "Numistic Administration" trait gain the "Merchant of Numa" leader trait
 * 3.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for effects
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
@@ -99,6 +99,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
 * 7.0.0 Update for Stellaris version 3.8 "Gemini"
     * Integrate underlying game changes (lots of code simplification)
     * Do not attempt to adjust leader traits for Clone Soldiers if [Leader Traits: Clone Army - All Leader Classes](https://steamcommunity.com/sharedfiles/filedetails/?id=2784215835) is active
+* 7.0.1 Ensure legendary/renowned leaders don't have traits improperly adjusted
 
 ## Source Code
 
