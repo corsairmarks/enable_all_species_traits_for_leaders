@@ -31,15 +31,10 @@ Like leaders? Try some of my other leader-related mods that work with this one.
 [list]
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2784224276]Leader Traits: Merge-Add Species Traits[/url] re-enables combining species traits like Cybernetic and Psionic via applying species templates, so that it is easier to create a superspecies with multiple leader-beneficial species traits
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] helps your scientists upgrade to "Sapient AI Assistants" from "Custom AI Assistants" when you discover the right technology
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] helps your leaders get species-appropriate traits (no more substance abusing robots!) and can randomly get [i]any[/i] of the class-appropriate traits when levelling up
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects & Pre-FTL Civilizations[/url] lets you choose whether you would like to keep leaders from integrated subjects or conquered/infiltrated primitives
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
 [h2]Known Issues[/h2]
-[h3]Stellaris Bugs[/h3]
-Traits that are intended to function on regular leaders and also as Councilor traits for rulers are not able to be correctly added to rulers in Dictatorial, Imperial, or Gestalt empires. This includes built-in traits like Psychic and Cyborg.
-
-[h3]Error Logs[/h3]
 Overriding events and effects from the default game causes error logs. Expect to see nine lines similar to this in error.log:
 [code]
 [00:39:58][game_singleobjectdatabase.h:153]: Object with key: remove_leader_traits_after_modification already exists, using the one at file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
