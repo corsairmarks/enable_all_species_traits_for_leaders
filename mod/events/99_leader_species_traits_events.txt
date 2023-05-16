@@ -64,6 +64,12 @@ leader_event = {
 	id = leader_species_traits.5
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_leader_flag = renowned_leader
+			has_leader_flag = legendary_leader
+		}
+	}
 	immediate = {
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
@@ -107,7 +113,11 @@ country_event = {
 					is_robotic_species = no
 				}
 			}
-			NOT = { has_trait = leader_trait_brainslug }
+			NOR = {
+				has_trait = leader_trait_brainslug
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
+			}
 			OR = {
 				NOT = { exists = pop_faction }
 				pop_faction = {
@@ -132,7 +142,11 @@ country_event = {
 						is_robotic_species = no
 					}
 				}
-				NOT = { has_trait = leader_trait_brainslug }
+				NOR = {
+					has_trait = leader_trait_brainslug
+					has_leader_flag = renowned_leader
+					has_leader_flag = legendary_leader
+				}
 				OR = {
 					NOT = { exists = pop_faction }
 					pop_faction = {
