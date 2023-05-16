@@ -125,7 +125,7 @@ ship_event = {
 		name = NOTIME
 	}
 	option = {
-		trigger = { owner = { has_authority = auth_machine_intelligence } }
+		trigger = { owner = { is_machine_empire = yes } }
 		name = "distar.170.machi"
 		owner = {
 			add_monthly_resource_mult = {
