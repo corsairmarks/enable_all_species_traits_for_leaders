@@ -26,6 +26,8 @@ This mod overrides eight default events related to adding leader traits: `distar
 4. `utopia.2601` ensures that newly-spawned latent psionic leaders are flagged as having already rolled for a chance at a psionic trait. If removed or disabled, the flag won't be set so some latent psionic leaders may be able to get a second chance at randomly rolling a psionic trait.
 5. `utopia.2605` is the event for leaders randomly gaining the Psionic trait from Psionic species.  I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
 
+Beginning with Stellaris version 3.8 "Gemini," leader traits respect their `opposites` blocks. It is no longer possible to add "incompatible" traits to the same leader. Therefore, this mod now also overrides the built-in special leader traits file `00_special_leader_traits.txt`. That means that this mod conflicts with other mods that override the same file (traits require a full-file override). For this mod to take precedence, load it _after_ other mods that edit the same file.
+
 All other the new logic is implemented in standalone events and effects which should not conflict with other mods.
 
 ### When to Install
@@ -100,6 +102,9 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Integrate underlying game changes (lots of code simplification)
     * Do not attempt to adjust leader traits for Clone Soldiers if [Leader Traits: Clone Army - All Leader Classes](https://steamcommunity.com/sharedfiles/filedetails/?id=2784215835) is active
 * 7.0.1 Ensure legendary/renowned leaders don't have traits improperly adjusted
+* 7.1.0 Update for Stellaris version 3.8 "Gemini"
+    * Add override of special leader traits file - leader traits are now respect their `opposites` blocks, meaning Cyborg and Psychic are not usable together by default
+    * For bugfix version 3.8.3: use new built-in trigger to check for Chosen One leaders
 
 ## Source Code
 
