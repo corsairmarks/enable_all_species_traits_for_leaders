@@ -456,8 +456,7 @@ country_event = {
 	trigger = {
 		any_owned_leader = {
 			species = { has_trait = trait_latent_psionic }
-			NOT = { has_trait = leader_trait_psionic }
-			has_chosen_one_leader_trait = no
+			has_psionic_leader_trait = no
 		}
 	}
 	mean_time_to_happen = {
@@ -467,8 +466,7 @@ country_event = {
 		random_owned_leader = {
 			limit = {
 				species = { has_trait = trait_latent_psionic }
-				NOT = { has_trait = leader_trait_psionic }
-				has_chosen_one_leader_trait = no
+				has_psionic_leader_trait = no
 			}
 			save_event_target_as = psionic_leader
 		}

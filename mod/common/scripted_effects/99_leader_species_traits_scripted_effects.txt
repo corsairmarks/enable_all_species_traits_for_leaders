@@ -35,7 +35,7 @@ add_leader_trait_psionic = {
 	if = {
 		limit = {
 			species = { has_psionic_species_trait = yes }
-			has_chosen_one_leader_trait = no
+			has_psionic_leader_trait = no
 		}
 		add_trait_no_notify = leader_trait_psionic
 	}
