@@ -8,6 +8,7 @@ country_event = {
 	id = utopia.2508
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = { always = no }
 	immediate = { }
 }
 
@@ -16,6 +17,7 @@ country_event = {
 # 	id = utopia.2509
 # 	is_triggered_only = yes
 # 	hide_window = yes
+# 	trigger = { always = no }
 # 	immediate = { }
 # }
 
@@ -24,6 +26,7 @@ country_event = {
 # 	id = utopia.2510
 # 	is_triggered_only = yes
 # 	hide_window = yes
+# 	trigger = { always = no }
 # 	immediate = { }
 # }
 
@@ -32,6 +35,7 @@ country_event = {
 # 	id = utopia.2560
 # 	is_triggered_only = yes
 # 	hide_window = yes
+# 	trigger = { always = no }
 # 	immediate = { }
 # }
 
@@ -58,6 +62,7 @@ country_event = {
 # 	id = utopia.2651
 # 	is_triggered_only = yes
 # 	hide_window = yes
+# 	trigger = { always = no }
 # 	immediate = { }
 # }
 
@@ -388,6 +393,7 @@ ship_event = {
 						limit = {
 							leader_class = scientist
 							is_robotic_species = no
+							is_xenophobe = no
 							NOT = { has_trait = leader_trait_brainslug }
 						}
 						add_trait = leader_trait_brainslug
@@ -397,6 +403,7 @@ ship_event = {
 					limit = {
 						leader_class = governor
 						is_robotic_species = no
+						is_xenophobe = no
 						NOT = { has_trait = leader_trait_brainslug }
 					}
 					add_trait = leader_trait_brainslug
@@ -449,11 +456,8 @@ country_event = {
 	trigger = {
 		any_owned_leader = {
 			species = { has_trait = trait_latent_psionic }
-			NOR = {
-				has_trait = leader_trait_psionic
-				has_trait = leader_trait_chosen
-			}
-			has_chosen_covenant_trait_non_ruler = no # really checks whether the leader has any chosen covenant trait
+			NOT = { has_trait = leader_trait_psionic }
+			has_chosen_one_leader_trait = no
 		}
 	}
 	mean_time_to_happen = {
@@ -463,16 +467,12 @@ country_event = {
 		random_owned_leader = {
 			limit = {
 				species = { has_trait = trait_latent_psionic }
-				NOR = {
-					has_trait = leader_trait_psionic
-					has_trait = leader_trait_chosen
-				}
-				has_chosen_covenant_trait_non_ruler = no
+				NOT = { has_trait = leader_trait_psionic }
+				has_chosen_one_leader_trait = no
 			}
 			save_event_target_as = psionic_leader
 		}
 	}
-
 	option = {
 		name = utopia.2605.a
 		event_target:psionic_leader = { add_trait = leader_trait_psionic }

@@ -35,8 +35,7 @@ add_leader_trait_psionic = {
 	if = {
 		limit = {
 			species = { has_psionic_species_trait = yes }
-			NOT = { has_trait = leader_trait_chosen }
-			has_chosen_covenant_trait_non_ruler = no # really checks whether the leader has any chosen covenant trait
+			has_chosen_one_leader_trait = no
 		}
 		add_trait_no_notify = leader_trait_psionic
 	}
@@ -199,10 +198,7 @@ adjust_psionic_chosen_traits = {
 	if = {
 		limit = {
 			has_trait = leader_trait_psionic
-			OR = {
-				has_trait = leader_trait_chosen
-				has_chosen_covenant_trait_non_ruler = yes # really checks whether the leader has any chosen covenant trait
-			}
+			has_chosen_one_leader_trait = yes
 		}
 		remove_trait = leader_trait_psionic
 	}
