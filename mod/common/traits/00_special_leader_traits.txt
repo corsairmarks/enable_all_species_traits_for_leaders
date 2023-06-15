@@ -122,7 +122,7 @@ leader_trait_cyborg = {
 		ship_weapon_damage = 0.1
 		ship_weapon_range_mult = 0.10
 	}
-	triggered_modifier = {
+	triggered_self_modifier = {
 		potential = {
 			is_ruler = no
 			leader_class = general
