@@ -47,7 +47,6 @@ country_event = {
 		has_active_event = { leader.1 }
 		exists = last_created_leader
 		last_created_leader = { leader_class = admiral }
-		is_country = last_created_leader.owner
 	}
 	immediate = {
 		last_created_leader = {
