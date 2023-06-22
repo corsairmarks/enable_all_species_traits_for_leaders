@@ -106,6 +106,7 @@ Overriding events and effects from the default game causes error logs.  Expect t
     * Add override of special leader traits file - leader traits are now respect their `opposites` blocks, meaning Cyborg and Psychic are not usable together by default
     * For bugfix version 3.8.3: use new built-in trigger to check for Chosen One leaders
 * 7.1.1 Update for Stellaris version 3.8.4 "Gemini" - integrate underlying game changes
+* 7.1.2 Allow the Beholder to Psi-Inoculate cybernetic species Pops
 
 ## Source Code
 
