@@ -2,10 +2,14 @@ namespace = leader_species_traits
 
 # new leaders get every applicable species-specific leader trait
 # note that the code for brainslugs and latent psionics are a 20% chance each and not guaranteed, as in the default game
+# triggered by on_leader_spawned
+# root = country
+# from = leader
 country_event = {
 	id = leader_species_traits.1
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = { exists = from }
 	immediate = {
 		from = {
 			leader_event = {
@@ -16,10 +20,14 @@ country_event = {
 }
 
 # modifying a species applies all applicable traits and removes those no longer applicable
+# triggered by on_modification_complete
+# root = country
+# from = species (Post Modification)
 country_event = {
 	id = leader_species_traits.2
-	is_triggered_only = yes
 	hide_window = yes
+	is_triggered_only = yes
+	trigger = { exists = from }
 	immediate = {
 		every_owned_leader = {
 			limit = { species = { is_exact_same_species = from } }
@@ -39,6 +47,11 @@ country_event = {
 
 # follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
 # should be harmless if executed against another admiral - assuming they had species-appropriate traits in the first place, no changes will be made
+# triggered by on_fleet_destroyed_perp
+# root = country, owner of fleet 1
+# from = country, owner of fleet 2
+# fromfrom = fleet 1, combatant
+# fromfromfrom = fleet 2, destroyed
 country_event = {
 	id = leader_species_traits.4
 	hide_window = yes
@@ -81,9 +94,7 @@ event = {
 	id = leader_species_traits.6
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_initial_config }
-	}
+	trigger = { NOT = { has_global_flag = leader_species_traits_initial_config } }
 	immediate = {
 		every_country = {
 			country_event = {

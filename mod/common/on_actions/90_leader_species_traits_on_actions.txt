@@ -32,10 +32,10 @@ on_modification_complete = {
 	}
 }
 
-# this = owner of fleet 1 (combatant)
-# from = owner of fleet 2 (destroyed)
-# fromfrom = fleet 1
-# fromfromfrom = fleet 2
+# this = country, owner of fleet 1
+# from = country, owner of fleet 2
+# fromfrom = fleet 1, combatant
+# fromfromfrom = fleet 2, destroyed
 on_fleet_destroyed_perp = {
 	events = {
 		leader_species_traits.4

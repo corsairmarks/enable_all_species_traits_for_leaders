@@ -1,0 +1,4 @@
+﻿l_english:
+ decision_psi_inoculate_pops_desc: "The Beholder inoculates Pops over time to become §Y$trait_psionic$§!. This requires that the Pops are not Hive-Minded and are not being assimilated or purged."
+ no_organic_pops_on_planet: "§RThis planet has no organic, non-psionic Pops to inoculate.§!"
+ decision_cease_psi_inoculate_pops_desc: "$decision_psi_inoculate_pops_desc$"
