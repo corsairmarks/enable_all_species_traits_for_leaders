@@ -1,0 +1,326 @@
+namespace = paragon
+
+# Modified:
+# * The Beholder is created by the Creatures of the Shroud country, for a more flavorful creator
+# * The Beholder's species has specific traits (including trait_psionic, so it doesn't get clobbered by this mod)
+# * The Beholder is xenophilic (instead of lacking an ethic; matches the requirement for its governor destiny trait)
+# * The Beholder has useful levels of its traits (especially since it has no destiny trait as an admiral)
+# * instead of cloning The Beholder, just set them to the leader of their ship's fleet (automatically sets the owner, thus unexiling)
+# * hiring The Beholder triggers the memory vault bonus, if applicable
+country_event = {
+	id = paragon.1
+	title = paragon.31.name
+	desc = paragon.31.desc
+	event_window_type = leader_recruit
+	picture = GFX_leader_recruitment_bg_legendary_beholder
+	picture_event_data = { portrait = event_target:beholder_leader }
+	show_sound = par_event_beholder
+	location = event_target:beholder_planet
+	is_triggered_only = yes
+	trigger = {
+		has_paragon_dlc = yes
+		has_country_flag = beholder_chain_owner
+		exists = event_target:beholder_planet
+	}
+	immediate = {
+		lst_ensure_global_shroud_country = yes
+		event_target:shroud_country = {
+			create_species = {
+				name = NAME_Unknown
+				class = PARAGON
+				portrait = paragon01
+				namelist = PRT1
+				traits = {
+					trait = trait_psionic
+					trait = trait_enduring
+					trait = trait_quick_learners
+				}
+				effect = { save_event_target_as = beholder_species }
+			}
+			create_leader = {
+				species = event_target:beholder_species
+				event_leader = yes
+				class = admiral
+				name = NAME_The_Beholder
+				skill = 10
+				immortal = yes
+				gender = indeterminable
+				set_age = 0
+				hide_age = yes
+				randomize_traits = no
+				can_manually_change_location = no
+				can_assign_to_council = no
+				skip_background_generation = yes
+				background_ethic = ethic_xenophile
+				custom_catch_phrase = beholder_catch_phrase
+				custom_description = beholder_backstory
+				traits = {
+					trait = leader_trait_psionic
+					trait = subclass_admiral_tactician
+					trait = leader_trait_cautious_2
+					trait = leader_trait_scout_3
+					trait = leader_trait_watchdog_3
+				}
+				effect = {
+					save_global_event_target_as = beholder_leader
+					set_leader_flag = is_in_recruit_window
+					set_leader_flag = legendary_leader
+					set_leader_flag = beholder
+					set_leader_flag = immune_to_negative_traits
+					set_leader_flag = leader_death_events_blocked
+					exile_leader_as = beholder_leader
+				}
+			}
+		}
+	}
+	option = { # HIRE
+		tag = hire_leader
+		name = HIRE
+		custom_tooltip = "paragon_beholder_joins"
+		sound = par_beholder_hire
+		hidden_effect = {
+			lst_ensure_communications_global_shroud_country = yes
+			set_country_flag = zro_found
+			if = {
+				limit = { is_memory_vault_empire = yes }
+				random_owned_planet = {
+					limit = { is_variable_set = paragon_memory_vault }
+					change_variable = {
+						which = paragon_memory_vault
+						value = 1
+					}
+				}
+			}
+			create_fleet = {
+				name = NAME_Temple_of_Whispers
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					can_disband = no
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = root
+					create_ship_design = { design = NAME_Temple_of_Whispers }
+					create_ship = {
+						design = last_created_design
+						name = NAME_Temple_of_Whispers
+						prefix = no
+						upgradable = no
+						effect = {
+							set_ship_flag = is_beholder_ship
+							save_global_event_target_as = beholder_ship
+						}
+					}
+					if = {
+						limit = {
+							exists = event_target:beholder_presapients
+							exists = event_target:beholder_planet
+						}
+						set_location = {
+							target = event_target:beholder_planet
+							distance = 1
+							angle = random
+						}
+					}
+					else = {
+						set_location = {
+							target = root.capital_scope
+							distance = 1
+							angle = random
+						}
+					}
+					event_target:beholder_leader = { remove_leader_flag = is_in_recruit_window }
+					set_leader = event_target:beholder_leader # unexiles the leader and switches the owner
+				}
+			}
+			create_message = {
+				type = MESSAGE_RECRUITED_LEADER
+				localization =  MESSAGE_RECRUITED_LEADER_DESC
+				days = @toast_message_days
+				target = event_target:beholder_leader
+				variable = {
+					type = name
+					localization = LEADER
+					scope = event_target:beholder_leader
+				}
+				variable = {
+					key = "border"
+					value = "GFX_border_legendary"
+				}
+			}
+		}
+	}
+	option = { # DECLINE
+		tag = dismiss_leader
+		name = DECLINE
+		custom_tooltip = DECLINE.tt
+		sound = par_beholder_dismiss
+		hidden_effect = { event_target:beholder_leader = { kill_leader = { show_notification = no } } }
+	}
+	option = { # To what end do you seek energy?
+		name = "paragon.1.a"
+		response_text = "paragon.1.a.response"
+		is_dialog_only = yes
+	}
+	option = { # What can you do for our civilization?
+		name = "paragon.1.b"
+		response_text = "paragon.1.b.response"
+		is_dialog_only = yes
+	}
+	option = { # What are you?
+		name = "paragon.1.c"
+		response_text = "paragon.1.c.response"
+		is_dialog_only = yes
+	}
+	after = {
+		hidden_effect = {
+			clear_global_event_target = beholder_planet
+			clear_global_event_target = beholder_presapients
+			remove_country_flag = beholder_chain_owner
+			event_target:beholder_planet = { remove_modifier = the_beholder_presapients_protected }
+		}
+	}
+}
+
+# Modified:
+# * do not remove leader_trait_psionic when The Beholder converts to a governor
+# * remove updated admiral traits when The Beholder converts to a governor
+# * add updated governor traits when The Beholder converts to a governor
+planet_event = {
+	id = paragon.99
+	hide_window = yes
+	location = from
+	is_triggered_only = yes
+	trigger = { has_paragon_dlc = yes }
+	immediate = {
+		if = {
+			limit = { free_building_slots > 0 }
+			# A bit of flare
+			spawn_planet_temperature_effect = yes
+			# Add building if applicable
+			if = {
+				limit = { NOT = { has_building = building_the_beholder } }
+				add_building = building_the_beholder
+			}
+			# Change leader into a governor
+			event_target:beholder_leader = {
+				remove_trait = subclass_admiral_tactician
+				remove_trait = leader_trait_cautious_2
+				remove_trait = leader_trait_scout_3
+				remove_trait = leader_trait_watchdog_3
+				change_leader_class = governor
+				add_trait_no_notify = leader_trait_governor_psionic_communion
+				add_trait_no_notify = subclass_governor_pioneer
+				add_trait_no_notify = leader_trait_mediator
+				add_trait_no_notify = leader_trait_generator_focus_3
+				add_trait_no_notify = leader_trait_academic_3
+			}
+			delete_fleet = {
+				target = event_target:beholder_ship.fleet
+				kill_leader = no
+				destroy_template = yes
+			}
+			assign_leader = event_target:beholder_leader
+			create_message = {
+				type = MESSAGE_BEHOLDER_PLANETFALL
+				localization = MESSAGE_BEHOLDER_PLANETFALL_DESC
+				days = 10
+				target = this
+				variable = {
+					type = name
+					localization = PLANET
+					scope = this
+				}
+			}
+		}
+		else = {
+			create_message = {
+				type = MESSAGE_BEHOLDER_PLANETFALL_NO_SLOTS
+				localization = MESSAGE_BEHOLDER_PLANETFALL_NO_SLOTS_DESC
+				days = 10
+				target = this
+				variable = {
+					type = name
+					localization = PLANET
+					scope = this
+				}
+			}
+		}
+	}
+}
+
+# Modified: cybernetic Pops can undergo psi-inoculation
+planet_event = {
+	id = paragon.50
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_building = building_the_beholder
+		has_planet_flag = psi_inoculating_pops
+		exists = event_target:beholder_leader
+	}
+	immediate = {
+		set_saved_date = {
+			key = beholder_psi_pops_timer
+			days_from_present = 180
+			expires = 180
+		}
+		random_owned_pop = {
+			limit = {
+				is_organic_species = yes
+				is_being_assimilated = no
+				is_being_purged = no
+				NOR = {
+					has_trait = trait_psionic
+					has_trait = trait_hive_mind
+				}
+			}
+			modify_species = {
+				remove_trait = trait_latent_psionic
+				add_trait = trait_psionic
+			}
+		}
+		create_message = {
+			type = MESSAGE_POPS_INOCULATED
+			localization = MESSAGE_POPS_INOCULATED_DESC
+			days = 20
+			target = root
+			variable = {
+				type = name
+				localization = PLANET
+				scope = root
+			}
+		}
+		if = {
+			limit = {
+				count_owned_pop = {
+					count = 0
+					limit = {
+						is_organic_species = yes
+						is_being_assimilated = no
+						is_being_purged = no
+						NOR = {
+							has_trait = trait_psionic
+							has_trait = trait_hive_mind
+						}
+					}
+				}
+			}
+			remove_planet_flag = psi_inoculating_pops
+			remove_planet_flag = beholder_psi_pops_timer
+			set_saved_date = {
+				key = beholder_psi_pops_cooldown_timer
+				days_from_present = 180
+				expires = 180
+			}
+		}
+		else = {
+			planet_event = {
+				id = paragon.50
+				days = 180
+			}
+		}
+	}
+}

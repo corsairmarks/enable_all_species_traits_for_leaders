@@ -325,3 +325,44 @@ remove_all_inapplicable_leader_species_traits = {
 		remove_leader_trait_clone_army_fertile_admiral = yes
 	}
 }
+
+# duplicates the base game's Creatures of the Shroud creation code - which is unfortuantely duplicated/near-duplicated multiple times but none of them in a reusable effect
+# this = any
+lst_ensure_global_shroud_country = {
+	optimize_memory
+	if = {
+		limit = { NOT = { exists = event_target:shroud_country } }
+		create_country = {
+			name = NAME_Creatures_of_the_Shroud
+			type = shroud_spirits
+			flag = {
+				icon = {
+					category = "special"
+					file = "the_shroud.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"dark_purple"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = { save_global_event_target_as = shroud_country }
+		}
+	}
+}
+
+# ensures the Creatures of the Shroud exists and that the scoped country (silently) has communications with it
+# this = country
+lst_ensure_communications_global_shroud_country = {
+	optimize_memory
+	lst_ensure_global_shroud_country = yes
+	if = {
+		limit = { NOT = { has_communications = event_target:shroud_country } }
+		establish_communications_no_message = event_target:shroud_country
+	}
+}

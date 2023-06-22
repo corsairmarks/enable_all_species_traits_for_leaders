@@ -1,0 +1,135 @@
+# Modified:
+# * remove updated governor traits when The Beholder converts to an admiral
+# * add updated admiral traits when The Beholder converts to am admiral
+decision_deploy_beholder = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_deploy_temple_of_whispers
+	allow = {
+		custom_tooltip = {
+			fail_text = cannot_deploy_during_psi_inoculation
+			NOT = { has_planet_flag = psi_inoculating_pops }
+		}
+	}
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 100
+		}
+	}
+	potential = {
+		exists = event_target:beholder_leader
+		has_building = building_the_beholder
+	}
+	effect = {
+		custom_tooltip = decision_deploy_beholder_custom_tooltip
+		hidden_effect = {
+			remove_building = building_the_beholder
+			# Change leader into an admiral
+			event_target:beholder_leader = {
+				remove_trait = leader_trait_governor_psionic_communion
+				remove_trait = subclass_governor_pioneer
+				remove_trait = leader_trait_mediator
+				remove_trait = leader_trait_generator_focus_3
+				remove_trait = leader_trait_academic_3
+				change_leader_class = admiral
+				add_trait_no_notify = subclass_admiral_tactician
+				add_trait_no_notify = leader_trait_cautious_2
+				add_trait_no_notify = leader_trait_scout_3
+				add_trait_no_notify = leader_trait_watchdog_3
+			}
+			create_fleet = {
+				name = NAME_Temple_of_Whispers
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					can_disband = no
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = root.owner
+					create_ship_design = { design = NAME_Temple_of_Whispers }
+					create_ship = {
+						design = last_created_design
+						name = NAME_Temple_of_Whispers
+						prefix = no
+						upgradable = no
+						effect = {
+							set_ship_flag = is_beholder_ship
+							save_global_event_target_as = beholder_ship
+						}
+					}
+					set_location = prev
+					assign_leader = event_target:beholder_leader
+				}
+			}
+		}
+	}
+	ai_weight = {
+		weight = 5
+		# Save up some buffer zro before deploying
+		modifier = {
+			factor = 0
+			has_resource = {
+				type = sr_zro
+				amount < 150
+			}
+		}
+	}
+}
+
+# Modified: cybernetic Pops can undergo psi-inoculation
+decision_psi_inoculate_pops = {
+	owned_planets_only = yes
+	sound = event_activating_unknown_technology
+	icon = decision_psi_inoculate_pops
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 50
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = no_organic_pops_on_planet
+			any_owned_pop = { 
+				is_organic_species = yes 
+				is_being_assimilated = no
+				is_being_purged = no
+				NOR = {
+					has_trait = trait_psionic
+					has_trait = trait_hive_mind
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = beholder_psi_pops_cooldown_tooltip
+			NOT = { has_planet_flag = beholder_psi_pops_cooldown_timer }
+		}
+	}
+	potential = {
+		exists = event_target:beholder_leader
+		has_building = building_the_beholder
+		NOT = { has_planet_flag = psi_inoculating_pops }
+	}
+	effect = {
+		custom_tooltip = decision_psi_inoculate_pops_custom_tooltip
+		hidden_effect = {
+			set_planet_flag = psi_inoculating_pops
+			if = {
+				limit = { NOT = { has_planet_flag = beholder_psi_pops_timer } }
+				set_saved_date = {
+					key = beholder_psi_pops_timer
+					days_from_present = 180
+					expires = 180
+				}
+				planet_event = {
+					id = paragon.50
+					days = 180
+				}
+			}
+		}
+	}
+	ai_weight = { weight = 2 }
+}
