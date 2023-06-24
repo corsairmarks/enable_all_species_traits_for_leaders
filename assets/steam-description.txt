@@ -13,11 +13,12 @@ The same code is used in each of these three cases (via effects) that do not enf
 [h2]Compatibility[/h2]
 Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 
-This mod overrides eight default events related to adding leader traits: [b]distar.170[/b], [b]distar.171[/b], [b]distar.172[/b], [b]distar.173[/b], [b]distar.174[/b], [b]utopia.2508[/b], [b]utopia.2601[/b], and [b]utopia.2605[/b]. Other mods that make changes to any of the same events will conflict with this one.
+This mod overrides eleven default events related to adding leader traits. Other mods that make changes to any of the same events will conflict with this one:
 [olist]
-[*]For [b]distar.170[/b], [b]distar.171[/b], and [b]distar.172[/b] you should keep the versions from this mod or otherwise merge the changes - they enable cybernetic empires to complete the special project for brainslugs, and ensure robotic leaders aren't selected to receive the brainslug trait.
-[*]For [b]distar.173[/b] and/or [b]distar.174[/b], the easiest way to resolve the conflict is to comment out or delete the event(s) from this mod. The overrides are just a cleaner way to add the initial brainslug trait for hireable leaders. If removed or disabled, the original in-game code will execute instead but it has a very low impact.
-[*][b]utopia.2508[/b] is the default event for adding or removing Erudite leader traits. That event uses the effect [b]remove_leader_traits_after_modification[/b] which is also overridden. If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that [i]any[/i] species in your empire is modified.
+[*][b]distar.170[/b], [b]distar.171[/b], and [b]distar.172[/b] enable cybernetic empires to complete the special project for brainslugs, and ensure robotic leaders aren't selected to receive the brainslug trait - you should keep the versions from this mod or otherwise merge the changes.
+[*][b]distar.173[/b] and/or [b]distar.174[/b] are just a cleaner way to add the initial brainslug trait for hireable leaders; if removed or disabled, the original in-game code will execute instead but it has a very low impact.
+[*][b]paragon.1[/b], [b]paragon.99[/b], and [b]paragon.50[/b] are events related to The Beholder's abilities to make planetfall and perform psi-inoculation - required so that The Beholder can psi-inoculate cyborgs into psiborgs (also buffs The Beholder's leader traits). The relevant decisions are also overridden [b]decision_deploy_beholder[/b] and [b]decision_psi_inoculate_pops[/b] in order to support the necessary functionality.
+[*][b]utopia.2508[/b] is the default event for adding or removing Erudite leader traits; uses the effect [b]remove_leader_traits_after_modification[/b] which is also overridden. If you have conflicts with these, it is recommended you keep at least one of the two overrrides from this mod, otherwise you will lose Erudite-based leader traits from leaders that also have another special species trait, any time that [i]any[/i] species in your empire is modified.
 [*][b]utopia.2601[/b] ensures that newly-spawned latent psionic leaders are flagged as having already rolled for a chance at a psionic trait. If removed or disabled, the flag won't be set so some latent psionic leaders may be able to get a second chance at randomly rolling a psionic trait.
 [*][b]utopia.2605[/b] is the event for leaders randomly gaining the Psionic trait from Psionic species. I recommend you use this mod's version of the event in order to benefit from the reduced mean time-to-happen (i.e. happens more frequently) and wider selection criteria (any species with Latent Psionic, not just the owner's main species).
 [/olist]
@@ -37,17 +38,22 @@ Like leaders? Try some of my other leader-related mods that work with this one.
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2569179425][JP localize patch]Leader Traits: All Eligible Species Traits[/url] by Dryus - Japanese localisation
 [/list]
 [h2]Known Issues[/h2]
-Overriding events and effects from the default game causes error logs. Expect to see nine lines similar to this in error.log:
+Overriding events, effects, and decisions from the default game causes error logs. Expect to see fourteen lines similar to this in error.log:
 [code]
-[00:39:58][game_singleobjectdatabase.h:153]: Object with key: remove_leader_traits_after_modification already exists, using the one at file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
-[00:40:00][eventmanager.cpp:369]: event w/id [distar.170] already exists! file: events/distant_stars_events_1.txt line: 5061
-[00:40:00][eventmanager.cpp:369]: event w/id [distar.171] already exists! file: events/distant_stars_events_1.txt line: 5148
-[00:40:00][eventmanager.cpp:369]: event w/id [distar.172] already exists! file: events/distant_stars_events_1.txt line: 5192
-[00:40:00][eventmanager.cpp:369]: event w/id [distar.173] already exists! file: events/distant_stars_events_1.txt line: 5356
-[00:40:00][eventmanager.cpp:369]: event w/id [distar.174] already exists! file: events/distant_stars_events_1.txt line: 5401
-[00:40:01][eventmanager.cpp:369]: event w/id [utopia.2508] already exists! file: events/utopia_on_action_events.txt line: 634
-[00:40:01][eventmanager.cpp:369]: event w/id [utopia.2601] already exists! file: events/utopia_on_action_events.txt line: 1290
-[00:40:01][eventmanager.cpp:369]: event w/id [utopia.2605] already exists! file: events/utopia_on_action_events.txt line: 1378
+Object w/key remove_leader_traits_after_modification exists, using file: common/scripted_effects/99_leader_species_traits_scripted_effect_overrides.txt line: 2
+Event w/id [distar.170] exists! file: events/distant_stars_events_1.txt line: 5061
+Event w/id [distar.171] exists! file: events/distant_stars_events_1.txt line: 5148
+Event w/id [distar.172] exists! file: events/distant_stars_events_1.txt line: 5192
+Event w/id [distar.173] exists! file: events/distant_stars_events_1.txt line: 5356
+Event w/id [distar.174] exists! file: events/distant_stars_events_1.txt line: 5401
+Event w/id [paragon.1] exists! file: events/paragon_events.txt line: 501
+Event w/id [paragon.99] exists! file: events/paragon_events.txt line: 717
+Event w/id [paragon.50] exists! file: events/paragon_events.txt line: 815
+Event w/id [utopia.2508] exists! file: events/utopia_on_action_events.txt line: 634
+Event w/id [utopia.2601] exists! file: events/utopia_on_action_events.txt line: 1290
+Event w/id [utopia.2605] exists! file: events/utopia_on_action_events.txt line: 1378
+Object w/key decision_deploy_beholder exists, using file: common/decisions/18_leader_species_traits_paragon_decision_overrides.txt line: 4
+Object w/key decision_psi_inoculate_pops exists, using file: common/decisions/18_leader_species_traits_paragon_decision_overrides.txt line: 83
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/workshop/filedetails/changelog/2499031295]Change Notes[/url]
